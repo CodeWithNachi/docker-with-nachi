@@ -61,9 +61,21 @@
  1. We can verify the container is running by running command `docker ps -a`
  1. We can also verify it by browsing localhost:8090
 
+## Experiment 9
+ 1. Run the command `docker restart mynginx`. This command restarts the docker container. This can be understood by running the `docker ps` command and observing the up time.
+ 
+## Experiment 10
+ 1. Run the command `docker pause mynginx`. This command pauses the docker container. This can be checked by running `docker ps -a`.
+ 1. At this staget the docker stop and docker pause will look similar. It would be jumping to too far to understand the difference.
+ 
+## Experiment 11
+ 1. Run the command `docker unpause mynginx`. This will unpause the container.
+ 
+## Experiment 12
+ 1. Run the command `docker kill mynginx`. The will kill the container.
+ 1. This command is similar to docker stop. We will look at the difference between docker stop and kill at a later lesson
 
-
-
+## Summary
 
 
 ## Test your self
