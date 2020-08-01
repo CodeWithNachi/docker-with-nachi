@@ -17,7 +17,7 @@
  1. You should be seeing an output similar to the image
  
  
-![docker ps output](/Lesson-01-Experiment-02-Picture-01.png)
+![docker ps output](/Lesson-01-Experiment-02-Picture-01.PNG)
  
 
  
