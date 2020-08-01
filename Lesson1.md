@@ -43,6 +43,25 @@
  1. Run the command `docker start mynginx`. This command will start the exited container.
  1. Run the `docker ps -a` command. we can see that container is up
  1. Also we should be able to verify that the site is up in localhost:8090
+ 
+## Experiment 6
+ 1. Run the command `docker stop mynginx`.
+ 1. Now then run the command `docker rm mynginx`. This command will remove the container completely
+ 1. Verify if the container is removed by running `docker ps -a`. The output should indicate there is no container in running state or exited state
+ 
+## Experiment 7
+ 1. Run the command `docker create --name mynginx -p 8090:90 nginx`. This command creates a docker container but doesn't run it.
+ 1. As the container is not running, on hitting localhost:8090, we will find that 'site can't be reached'.
+ 1. Run the command `docker ps -a`. The output will be as shown in the figure. It will indicate the container is created but not running
+ 
+## Experiment 8
+ 1. Run the command `docker start mynginx`
+ 1. This command will start the created container.
+ 1. We are not specifying the image name like expriment 1 because we have already created the container in experiment 7
+ 1. We can verify the container is running by running command `docker ps -a`
+ 1. We can also verify it by browsing localhost:8090
+
+
 
 
 
