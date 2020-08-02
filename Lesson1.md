@@ -76,7 +76,24 @@
  1. This command is similar to docker stop. We will look at the difference between docker stop and kill at a later lesson
 
 ## Summary
-
+From the expreriments conducted till now we can infer the following
+ * Container is something like a running application. Image is something like a binary that was used to spin up the application. (We will refine this view in the next lesson)
+ * Image is used to create a container
+ * The container can be different states such as (defined in Engine api v1.24 https://docs.docker.com/engine/api/v1.24/)
+  * created
+  * restarting
+  * running
+  * paused
+  * exited
+  * dead
+ * We will look in to state transition in a latter lesson
+ * docker run command to create a container and get it running
+ * docker create command to create a container
+ * docker start command to move a container to running state from created or exited state
+ * docker pause command to pause a container
+ * docker unpause command to move a container from paused state to running state
+ * docker stop/kill command to move a container from running state to exited state
+ * docker ps command to list all running containers and all containers
 
 ## Test your self
  * What is an image?
