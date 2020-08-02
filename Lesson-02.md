@@ -20,6 +20,25 @@
  * docker exec -w /usr/share/nginx/html mynginx -it /bin/bash
  * cat /etc/os-release
  * apt update
- * 
+ * apt install -y procps
+ * ps aux
  
+ 
+# Experiment 04
+ * Spin up a new container
+ * File is lost
+ * Add the file
+ * Image is not modified
+ 
+# Experiment 05
+ * Create an image
+ * stop the contianer and start another one
+ 
+# Experiment 06
+ * Copy files in to the container
+
+# Experiment 07
+ * Copy files out of the container
+
+
  
