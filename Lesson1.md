@@ -80,12 +80,12 @@ From the expreriments conducted till now we can infer the following
  * Container is something like a running application. Image is something like a binary that was used to spin up the application. (We will refine this view in the next lesson)
  * Image is used to create a container
  * The container can be different states such as (defined in Engine api v1.24 https://docs.docker.com/engine/api/v1.24/)
-  * created
-  * restarting
-  * running
-  * paused
-  * exited
-  * dead
+   * created
+   * restarting
+   * running
+   * paused
+   * exited
+   * dead
  * We will look in to state transition in a latter lesson
  * docker run command to create a container and get it running
  * docker create command to create a container
