@@ -3,8 +3,8 @@
 ## Intention
  * Understand what is a image
  * Understand what is a container
- * Run a container
- * Stop a container
+ * Basic operations on a container
+ * States of the container
 
 ## Experiment 1
  1. Run the command `docker run --name mynginx -p 8090:80 -d nginx`
