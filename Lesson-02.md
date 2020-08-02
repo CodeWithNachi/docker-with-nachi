@@ -19,6 +19,7 @@
 # Experiment 03
  * docker exec -w /usr/share/nginx/html mynginx -it /bin/bash
  * cat /etc/os-release
+ * apt update
  * 
  
  
