@@ -74,6 +74,7 @@
 ## Experiment 12
  1. Run the command `docker kill mynginx`. The will kill the container.
  1. This command is similar to docker stop. We will look at the difference between docker stop and kill at a later lesson
+ 1. Run the command `docker rm mynginx` for now to remove the container.
 
 ## Summary
 From the expreriments conducted till now we can infer the following
@@ -99,3 +100,23 @@ From the expreriments conducted till now we can infer the following
  * What is an image?
  * What is a container?
  * What is the difference between a image and container?
+ * Run, Stop, Remove the Container
+   * Run a container from nginx image
+   * Verfiy access to default page
+   * Stop the container
+   * Remove the container
+ * Create, Start, Pause, Unpause, Stop and Remove
+   * Create a nginx container
+   * Start the created container
+   * Verfiy access to default page
+   * Pause the container
+   * Verify the default page is not accessible
+   * Unpause the container
+   * Verfiy access to default page
+   * Stop the container
+   * Verify the default page is not accessible
+   * Remove the container
+   * Verify the removal with `docker ps -a` command
+
+   
+  
