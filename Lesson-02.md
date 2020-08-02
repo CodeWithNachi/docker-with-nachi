@@ -40,5 +40,7 @@
 # Experiment 07
  * Copy files out of the container
 
+# Experiment 08
+ * uname -r
 
  
