@@ -18,8 +18,8 @@
  * We can realize that the content of index.html is what is servered in the endpoint http://localhost:8090
  
 # Experiment 03
- * Let us create new file named mypage.html in the directory `/usr/share/nginx/html` with the content "hello" by the command `docker exec -w /usr/share/nginx/html mynginx sh -c 'echo "hello" > ./mypage.html'`
- * Now we can verify if the file is created by listing the contents of the directory with the command `docker exec -w /usr/share/nginx/html mynginx ls`
+ * Lets run the command `docker exec -w /usr/share/nginx/html mynginx sh -c 'echo "hello" > ./mypage.html'`. This creates a file name mypage.html in the directory `/usr/share/nginx/html` with the content hello 
+ * By running the command `docker exec -w /usr/share/nginx/html mynginx ls`, we can verify the file is created 
  * When we hit the end point http://localhost:8090/mypage.html, we can see that our newly created file is also server by nginx
  * From the experiment, it looks like docker container has a file system that we can also modify
 
