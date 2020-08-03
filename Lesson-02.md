@@ -21,6 +21,7 @@
  * Let us create new file named mypage.html in the directory `/usr/share/nginx/html` with the content "hello" by the command `docker exec -w /usr/share/nginx/html mynginx sh -c 'echo "hello" > ./mypage.html'`
  * Now we can verify if the file is created by listing the contents of the directory with the command `docker exec -w /usr/share/nginx/html mynginx ls`
  * When we hit the end point http://localhost:8090/mypage.html, we can see that our newly created file is also server by nginx
+ * From the experiment, it looks like docker container has a file system that we can also modify
 
 # Experiment 03
  * docker exec -w /usr/share/nginx/html mynginx -it /bin/bash
