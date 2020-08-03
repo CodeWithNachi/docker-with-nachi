@@ -52,7 +52,22 @@
  * At this point docker containers look like a machine running an OS and we can run commands on it or we can interact with it by opening a terminal
  
 # Experiment 08 
- * Lets play around with another popluar container tom cat, we can get the container up by the command `docker run -d --name mytomcat tomcat:9.0`
+ * Lets play around with another version of nginx image
+ * Lets run the command `docker run --name alpine-nginx -d nginx:1.19.1-alpine`. This runs an image named `nginx:1.19.1-alpine`
+ * We have now started an another container named alpine-nginx.
+ * To the know the OS used in this container lets run the command `docker exec alpine-nginx cat /etc/os-release`
+ * Running the above command we know the new container is running with Alpine Linux
+ 
+# Experiment 09
+ * Now lets print the kernel information by the command `docker exec alpine-nginx uname -r`
+ * Running this command, we know the first container and second container though they are using different OS are using the same kernel
+ * This experiment helps us understand the following
+   * Each docker container can have its own operation system
+   * Each docker container can have its own file system
+   * They seem to using the same kernel or sharing the kernel
+ * Docker containers do not have their own kernel. They use the host systems kernel. By doing so, dockers are much more leaner then VMs
+ * They are also generally tweaked to do one thing and that one thing well. So all the unnecessary proccess are generally striped off.
+ * Docker does not provide a way for the container to have a UI. However UI processes could be run (if we need) in the container and we could connect using a remote desktop softare.
  
  
 # Experiment 04
