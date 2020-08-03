@@ -8,7 +8,7 @@
 # Experiment 01
  * Run the following commands
    * `docker run --name mynginx -d -p 8090:80 nginx`
-   * `docker exec -w /usr/share/nginx/html mynginx ls` . This command executes a command `ls` in the container named mynginx in the directory `/usr/share/nginx/html`
+   * `docker exec -w /usr/share/nginx/html mynginx ls` . This executes the command `ls` in the container named mynginx in the directory `/usr/share/nginx/html`
  * From the above command output, we know that there are 2 files (50x.html and index.html) in the directory `/usr/share/nginx/html`
  * After this experiment, docker container looks more than an application, it has directories and seems to have files in it.
 
