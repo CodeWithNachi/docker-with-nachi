@@ -69,8 +69,17 @@
  * Docker containers do not have their own kernel. They use the host systems kernel. By doing so, dockers are much more leaner then VMs
  * They are also generally tweaked to do one thing and that one thing well. So all the unnecessary proccess are generally striped off.
  * Docker does not provide a way for the container to have a UI. However UI processes could be run (if we need) in the container and we could connect using a remote desktop softare.
+
+# Experiment 10
+ * Another way to copy files
  
+# Experiment 11
+ * Stop and restart the image
  
+# Experiment 12
+ * commiting and starting a container
+ 
+
 # Experiment 04
  * Spin up a new container
  * File is lost
