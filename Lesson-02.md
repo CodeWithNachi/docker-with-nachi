@@ -27,10 +27,16 @@
  * Till now we were running commands from the host machine that get executed in docker container
  * Now lets run the command `docker exec -w /usr/share/nginx/html -it mynginx /bin/bash`. This opens a bash shell for us to interact with the docker.
  * we can now execute command in the bash shell directly without prefixing `docker....`
- * Let's run the linux command that prints the linux distribution `cat /etc/os-release`
- * apt update
- * apt install -y procps
- * ps aux
+ * Let's run the linux command that prints the linux distribution `cat /etc/os-release`.
+ * Running the above command, it looks like docker is not just a file system but also an OS. In this case a debian
+ * Now lets run the command `ps aux`. This command is used to list the processes that are running in linux. But on running the command, we realize that ps is not available.
+ * As this docker container seems to be a Debian Linux OS, lets try to install procps by the command `apt update && apt install -y procps`
+ * Running the above command, it looks like we can also install softwares in docker containers.
+ * Now let's run the command to list the processes `ps aux` in the docker shell
+ * Running the above command, we realize few processes are only running
+ * From the experiment it feels like docker is like a virtual machine that can have its own operating system, file system and runs it's own processes. However it doesn't seem to have a UI.
+ 
+ 
  
  
 # Experiment 04
