@@ -23,9 +23,11 @@
  * When we hit the end point http://localhost:8090/mypage.html, we can see that our newly created file is also server by nginx
  * From the experiment, it looks like docker container has a file system that we can also modify
 
-# Experiment 03
- * docker exec -w /usr/share/nginx/html mynginx -it /bin/bash
- * cat /etc/os-release
+# Experiment 04
+ * Till now we were running commands from the host machine that get executed in docker container
+ * Now lets run the command `docker exec -w /usr/share/nginx/html -it mynginx /bin/bash`. This opens a bash shell for us to interact with the docker.
+ * we can now execute command in the bash shell directly without prefixing `docker....`
+ * Let's run the linux command that prints the linux distribution `cat /etc/os-release`
  * apt update
  * apt install -y procps
  * ps aux
