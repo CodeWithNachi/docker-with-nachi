@@ -50,6 +50,7 @@
  * Running this command we see the kernel information of the docker.
  * Now that we have played around enough, lets go back to the host prompt by the command `exit`.
  * At this point docker containers look like a machine running an OS and we can run commands on it or we can interact with it by opening a terminal
+ * Now lets remove the container by the command `docker stop mynginx && docker rm mynginx`
  
 # Experiment 08 
  * Lets play around with another version of nginx image
