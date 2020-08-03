@@ -42,5 +42,6 @@
 
 # Experiment 08
  * uname -r
+ * docker run -it --rm -p 8888:8080 tomcat:9.0
 
  
