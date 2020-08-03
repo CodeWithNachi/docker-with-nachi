@@ -23,20 +23,36 @@
  * When we hit the end point http://localhost:8090/mypage.html, we can see that our newly created file is also server by nginx
  * From the experiment, it looks like docker container has a file system that we can also modify
 
-# Experiment 04
- * Till now we were running commands from the host machine that get executed in docker container
+# Experiment 04 (Getting in to the docker container shell)
+ * Till now we were running commands from the host machines and some other command got executed in the docker container.
  * Now lets run the command `docker exec -w /usr/share/nginx/html -it mynginx /bin/bash`. This opens a bash shell for us to interact with the docker.
- * we can now execute command in the bash shell directly without prefixing `docker....`
+ * On running the command, we can see that prompt has changed.
+ * Now we can now execute command in the bash shell directly.
+ * Let verify by running the command `ls`
+ 
+# Experiment 05 (Running command in docker container shell)
  * Let's run the linux command that prints the linux distribution `cat /etc/os-release`.
- * Running the above command, it looks like docker is not just a file system but also an OS. In this case a debian
- * Now lets run the command `ps aux`. This command is used to list the processes that are running in linux. But on running the command, we realize that ps is not available.
+ * It looks like this docker is not just a file system but also an debian OS
+ 
+# Experiment 06 (Running command in docker container shell)  
+ * Now lets run the command to list the processes `ps aux`. But on running the command, we realize that ps is not available.
  * As this docker container seems to be a Debian Linux OS, lets try to install procps by the command `apt update && apt install -y procps`
- * Running the above command, it looks like we can also install softwares in docker containers.
- * Now let's run the command to list the processes `ps aux` in the docker shell
- * Running the above command, we realize few processes are only running
- * From the experiment it feels like docker is like a virtual machine that can have its own operating system, file system and runs it's own processes. However it doesn't seem to have a UI.
+ * From the logs it would be clear that we have installed procps successfully in the docker container
+ * We can verify the procps is correctly installed by running the command `ps aux`
+ * From the experiment 
+   * It feels like docker is like a virtual machine 
+   * It has its own operating system
+   * It has its own file system
+   * It runs it's own processes (However it seems to running lesser number of processes compared to a VM, and also the UI that is there in the VM is not there)
+   
+# Experiment 07 (Running command in docker container shell)
+ * Now lets run the linux command to display the kernel information `uname -r`
+ * Running this command we see the kernel information of the docker.
+ * Now that we have played around enough, lets go back to the host prompt by the command `exit`.
+ * At this point docker containers look like a machine running an OS and we can run commands on it or we can interact with it by opening a terminal
  
- 
+# Experiment 08 
+ * Lets play around with another popluar container tom cat, we can get the container up by the command `docker run -d --name mytomcat tomcat:9.0`
  
  
 # Experiment 04
