@@ -35,5 +35,15 @@
  * We can stop and remove the current container with the command `docker stop mynginx && docker rm mynginx`
  * We can create a new container from the modifined image by the command `docker run -p 8090:80 -d --name mod-nginx nginx`
  * We can verify that container is able to serve the page http://localhost:8090/mypage.html
- 
+
+# Summary
+ * Any changes to the container will be lost when the container is removed
+ * Containers can be created out of a image by docker run or docker create commands
+ * Image can be created out a container by docker commit command
+
+# Test youself
+ * Create a container from nginx image
+ * Add a page to the nginx container
+ * Create an image from the nginx container
+ * Verify if the added page is there in the image by spinning up a new container
 
