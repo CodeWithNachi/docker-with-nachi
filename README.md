@@ -1,18 +1,10 @@
 # DockerWithNachi
 
-## docker run
- * no args
- * detached (-d)
- * interactive (-i)
- * tty (-t)
- * remove (--rm)
- * name (--name)
- * link
- * expose
- * working dir
- * port mapping
- * volume mount
- * health check
- * Link
- * Environment variable
- 
+What is Docker
+What is Docker cont..
+Changes in the container are short lived
+Docker networking basics
+Docker Image commands
+Docker Container command
+Docker Volume commands
+Docker Network commands
