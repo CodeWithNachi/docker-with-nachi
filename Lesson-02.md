@@ -69,34 +69,21 @@
  * They are also generally tweaked to do one thing and that one thing well. So all the unnecessary proccess are generally striped off.
  * Docker does not provide a way for the container to have a UI. However UI processes could be run (if we need) in the container and we could connect using a remote desktop softare.
 
-# Experiment 10
- * Another way to copy files
- 
-# Experiment 11
- * Stop and restart the image
- 
-# Experiment 12
- * commiting and starting a container
- 
+# Summary
+From the experiments conducted till now we can infer the following
+ * Container is something like a Virtual machine.
+ * Each container has a file system, and can run processes in it.
+ * Unline a VM, a container does not have it's own scheduler. It shares the scheduler with the host machine.
+ * Containers are made lean by
+   * Removing unnecessary files in the file system
+   * Not running processes that would not be necessary
+   * Not installing tools and software that would not be necessary
 
-# Experiment 04
- * Spin up a new container
- * File is lost
- * Add the file
- * Image is not modified
- 
-# Experiment 05
- * Create an image
- * stop the contianer and start another one
- 
-# Experiment 06
- * Copy files in to the container
+# Test your self
+ * Run a container from nginx
+ * Add a new page to the nginx container
+ * Find the linux distro that the nginx container is runnning
+ * Install procps in the container and list the running processes
 
-# Experiment 07
- * Copy files out of the container
-
-# Experiment 08
- * uname -r
- * docker run -it --rm -p 8888:8080 tomcat:9.0
 
  
