@@ -3,7 +3,6 @@
 ## Intention
  * Understand the similarity and differences between Docker Containers and Virtual machines
  * Run commands in containers
- * Copy contents to and from containers
 
 # Experiment 01
  * Run the following commands
