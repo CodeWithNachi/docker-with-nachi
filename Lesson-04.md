@@ -45,7 +45,16 @@
  * The output should indicate the containers are not able to communicate with each other
  * When no network is specified docker associates the container in the default bridge network. The default bridge network does not support name resolution.
  * However communication is possible through IP without name resolution
-
+ 
+ # Experiment 5
+ * Lets try to communicate through IP address
+ * The IP address of a container named container2 could be got through the command `docker inspect container2`
+ * The above command gives a lot of information, we can filter only the IP by adding a format as shown below
+ * `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container2`
+ * Now we should be able access service in container2 from container1 by `docker exec container1 curl <container2-ip>`
+ 
+ # Experiment 6
+ * 
 # Summary
  * Any changes to the container will be lost when the container is removed
  * Containers can be created out of a image by docker run or docker create commands
