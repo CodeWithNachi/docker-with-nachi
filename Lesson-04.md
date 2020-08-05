@@ -23,8 +23,8 @@
  * To simulate running a service in the host machine let's run the command `docker run --name local -d -p 8090:80 nginx`
  * Let now create a new docker container and access the service running is 8090
  * Let's create a container by the command `docker run --name mynginx -d nginx`
- * The host machine is accessible in the URI docker.host.internal
- * Let run the command `docker exec mynginx curl docker.host.internal:8090`
+ * The host machine is accessible in the URI host.docker.internal
+ * Let run the command `docker exec mynginx curl host.docker.internal:8090`
  
  
 # Experiment 3
