@@ -25,14 +25,15 @@
  * Let's create a container by the command `docker run --name mynginx -d nginx`
  * The host machine is accessible in the URI host.docker.internal
  * Let run the command `docker exec mynginx curl host.docker.internal:8090`
- 
- 
+ * By the output of the above command we know that we can reach host service from a docker container 
+
 # Experiment 3
  * Lets run command `docker cp mynginx:/usr/share/nginx/html/index.html ./index.html`
  * This command should copy the file /usr/share/nginx/html/index.html from the container to your local directory from where you are running your command
  * In the host machine, let us Replace "Welcome to nginx" with "Welcome to my page" in the local machine using any standard text editor
  * Now lets run the command `docker cp ./index.html mynginx:/usr/share/nginx/html/mypage.html` to copy the modified index.html as mypage.html
  * Lets verify if the modified content is available in http://localhost:8090/mypage.html
+ * 
 
 # Experiment 4
  * Now let us stop this container and run from the image
