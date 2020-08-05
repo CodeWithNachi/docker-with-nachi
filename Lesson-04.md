@@ -57,7 +57,9 @@
  * Lets try to communicate between docker containers running in different networks by the below commands
  * `docker network create net1`
  * `docker network create net2`
- * 
+ * `docker run --name web1 --networkd net1 -d nginx`
+ * `docker run --name web2 --networkd net2 -d nginx`
+ * ss
  
  
  
