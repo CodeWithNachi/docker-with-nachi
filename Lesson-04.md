@@ -67,7 +67,7 @@
  # Experiment 7
  * Now we could connect the container web2 to net1 and we can verify connectivity between web1 and web2
  * To connect web2 and net1 run the command `docker network connect net1 web2`
- * Now we should be able access web2 home page from web1 by docker exec web1 curl web2
+ * Now we should be able access web2 home page from web1 by `docker exec web1 curl web2`
  
 # Summary
  * Any changes to the container will be lost when the container is removed
