@@ -35,8 +35,16 @@
    * `docker network create -d bridge mynet`
    * `docker run --name container1 -d --network mynet nginx`
    * `docker run --name container2 -d --network mynet nginx`
-   * `docker exec container1 curl container`
-   
+   * `docker exec container1 curl container2`
+ 
+ # Experiment 5
+ * Now lets run the same experiment without specifing the network
+   * `docker run --name container1 -d nginx`
+   * `docker run --name container2 -d nginx`
+   * `docker exec container1 curl container2`
+ * The output should indicate the containers are not able to communicate with each other
+ * When no network is specified docker associates the container in the default bridge network. The default bridge network does not support name resolution.
+ * However communication is possible through IP without name resolution
 
 # Summary
  * Any changes to the container will be lost when the container is removed
