@@ -54,7 +54,13 @@
  * Now we should be able access service in container2 from container1 by `docker exec container1 curl <container2-ip>`
  
  # Experiment 6
+ * Lets try to communicate between docker containers running in different networks by the below commands
+ * `docker network create net1`
+ * `docker network create net2`
  * 
+ 
+ 
+ 
 # Summary
  * Any changes to the container will be lost when the container is removed
  * Containers can be created out of a image by docker run or docker create commands
