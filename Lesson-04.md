@@ -70,13 +70,17 @@
  * Now we should be able access web2 home page from web1 by `docker exec web1 curl web2`
  
 # Summary
- * Any changes to the container will be lost when the container is removed
- * Containers can be created out of a image by docker run or docker create commands
- * Image can be created out a container by docker commit command
+ * We can publish the docker container port using --publish or -p option
+ * The docker containers can access the service running on the host with the uri host.docker.internal
+ * Containers running in the same network can resolve other containers name to an ip address
+ * When creating a container we could specify a network. when not specified the container is associated with the default bridge network
+ * default bridge network does not offer dns resolution of name
+ * One docker can be in multiple networks
+ * In this section we have created networks using bridge driver. Other drivers are not covered as a part of this lesson.
 
 # Test youself
- * Create a container from nginx image
- * Add a page to the nginx container
- * Create an image from the nginx container
- * Verify if the added page is there in the image by spinning up a new container
-
+ * Create a container from nginx image and access that web page locally by publishing
+ * Access a service running in host machine (or simulated to be running in your host) from a docker container
+ * Access a service running in one docker container from another by making them in the same network
+ * Access a service running in one docker container from another by making them in the default network. Also show dns resolution is not possible
+ * Verify that two dockers associated with different networks can not communicate
