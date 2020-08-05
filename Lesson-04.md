@@ -57,9 +57,13 @@
  * Lets try to communicate between docker containers running in different networks by the below commands
  * `docker network create net1`
  * `docker network create net2`
- * `docker run --name web1 --networkd net1 -d nginx`
- * `docker run --name web2 --networkd net2 -d nginx`
- * ss
+ * `docker run --name web1 --network net1 -d nginx`
+ * `docker run --name web2 --network net2 -d nginx`
+ * We can verify that web2 is not reachable from container web1 by the running the command `docker exec web1 curl web1`
+ * We can repeat the experiment by specifying the ip address instead of the name. The command for getting the IP address is below
+ * `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web2`
+ * Command to attempt access of web2 is docker exec web1 curl <ip-address of web2>
+ 
  
  
  
