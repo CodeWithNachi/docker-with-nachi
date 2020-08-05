@@ -24,7 +24,7 @@
  * Let now create a new docker container and access the service running is 8090
  * Let's create a container by the command `docker run --name mynginx -d nginx`
  * The host machine is accessible in the URI docker.host.internal
- * Let run the command `docker exec mynginx curl docker.host.internal`
+ * Let run the command `docker exec mynginx curl docker.host.internal:8090`
  
  
 # Experiment 3
