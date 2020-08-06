@@ -7,7 +7,10 @@
  * States of the container
 
 ## Experiment 1
- 1. Run the command `docker run --name mynginx -p 8090:80 -d nginx`
+ 1. Run the command 
+```bash
+docker run --name mynginx -p 8090:80 -d nginx
+```
  1. InPrivate browsing or Incognito mode, go to the url localhost:8090
  1. We should see a "Welcome to nginx!" page
  1. We have run an nginx docker by the above command
