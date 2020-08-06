@@ -18,4 +18,3 @@
  * Docker Volume commands
  * Docker Network commands
 
-{% include list.liquid all=true %}
