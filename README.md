@@ -1,4 +1,4 @@
-# DockerWithNachi
+# Docker With Nachi
 
  * What is Docker (Similarity with an application)
  * What is Docker cont.. (Similarity with a VM and differences)
@@ -17,3 +17,5 @@
  * Docker Container command
  * Docker Volume commands
  * Docker Network commands
+
+{% include list.liquid all=true %}
