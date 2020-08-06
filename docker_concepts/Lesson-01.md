@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Docker Container Is Similar To An Application
+# Docker Container: Similarity With Application
 
 ## Intention
  * Understand what is an image

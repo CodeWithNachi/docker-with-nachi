@@ -1,3 +1,6 @@
+---
+sort: 4
+---
 # Lesson 04
 
 ## Intention

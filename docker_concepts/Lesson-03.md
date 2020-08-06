@@ -1,3 +1,6 @@
+---
+sort: 3
+---
 # Lesson 03
 
 ## Intention
