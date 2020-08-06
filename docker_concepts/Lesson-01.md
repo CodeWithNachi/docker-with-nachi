@@ -34,8 +34,14 @@ docker ps
    1. The status: The status of the container
 
 ## Experiment 3
- 1. Run the command `docker stop mynginx`
- 1. Run the command `docker ps`
+ 1. Till now we have run a container, and seen info about it. Now lets stop the container by the below command
+```bash
+docker stop mynginx
+```
+ 1. Now we can verify that the container is stopped by running the below command
+```bash
+docker ps
+```
  1. We can see that there are no running containers. `docker stop mynginx` command will stop the container named 'mynginx'
  1. InPrivate browsing or Incognito mode, when we go to the url localhost:8090, we will find that 'site can't be reached'. This is expected as we have stopped the container
  
