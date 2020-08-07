@@ -81,9 +81,15 @@ docker ps -a`
 ```
  
 ## Experiment 7
- 1. Run the command `docker create --name mynginx -p 8090:90 nginx`. This command creates a docker container but doesn't run it.
- 1. As the container is not running, on hitting localhost:8090, we will find that 'site can't be reached'.
- 1. Run the command `docker ps -a`. The output will be as shown in the figure. It will indicate the container is created but not running
+ 1. We have now seen how to run a container, stop it and remove it. We can also create a container without running it with the command below
+```bash
+docker create --name mynginx -p 8090:80 nginx
+```
+ 1. As seen earlier, we can verify that the container is create but not running with the below command
+```bash
+docker ps -a`
+```
+ 1. Verify the application is not running by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 8
  1. Run the command `docker start mynginx`
