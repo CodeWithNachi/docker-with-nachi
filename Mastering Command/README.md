@@ -2,6 +2,6 @@
 sort: 3
 ---
 
-# Why Docker
+# Mastering Commands
 
 {% include list.liquid %}
