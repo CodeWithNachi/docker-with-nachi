@@ -98,11 +98,16 @@ docker rm -f mynginx
 ```
  
 # Experiment 08 
- * Lets play around with another version of nginx image
- * Lets run the command `docker run --name alpine-nginx -d nginx:1.19.1-alpine`. This runs an image named `nginx:1.19.1-alpine`
+ * Lets now play around with an image that has nginx installed on top a alpine distro. Lets run the container by the below command.
+```bash
+docker run --name alpine-nginx -d nginx:1.19.1-alpine
+```
  * We have now started an another container named alpine-nginx.
- * To the know the OS used in this container lets run the command `docker exec alpine-nginx cat /etc/os-release`
- * Running the above command we know the new container is running with Alpine Linux
+ * To the know the OS used in this container lets run the below command
+```bash
+docker exec alpine-nginx cat /etc/os-release
+```
+ * The output should look showthing like its shown in the image below. And we can observe that we are running Alpine Linux
  
 # Experiment 09
  * Now lets print the kernel information by the command `docker exec alpine-nginx uname -r`
@@ -120,13 +125,14 @@ From the experiments conducted till now we can infer the following
  * Container is something like a Virtual machine.
  * Each container has a file system, and can run processes in it.
  * Unline a VM, a container does not have it's own scheduler. It shares the scheduler with the host machine.
- * Containers are made lean by
-   * Removing unnecessary files in the file system
-   * Not running processes that would not be necessary
-   * Not installing tools and software that would not be necessary
+ * Containers are leaner than virtual machines
+   * Containers has lesser number of files in the file system compared to VMs
+   * Containers has lesser number of processes running in it compared to VMs
+   * Containers has lesser softwares installed in it compared to VMs
+ * Generally the practice is to create a container that can do one job, and only softwares needed to do that job is installed.
 
 # Test your self
- * Run a container from nginx
+ * Run a container from nginx image
  * Add a new page to the nginx container
  * Find the linux distro that the nginx container is runnning
  * Install procps in the container and list the running processes
