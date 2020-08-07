@@ -92,11 +92,15 @@ docker ps -a`
  1. Verify the application is not running by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 8
- 1. Run the command `docker start mynginx`
- 1. This command will start the created container.
- 1. We are not specifying the image name like expriment 1 because we have already created the container in experiment 7
- 1. We can verify the container is running by running command `docker ps -a`
- 1. We can also verify it by browsing localhost:8090
+ 1. We now have a container that is created but not running. We can run it with the below command
+```bash
+docker start mynginx
+```
+ 1. As seen earlier, we can confirm the container is running by the below command
+```bash
+docker ps
+```
+ 1. Verify the application working by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
 
 ## Experiment 9
  1. Run the command `docker restart mynginx`. This command restarts the docker container. This can be understood by running the `docker ps` command and observing the up time.
