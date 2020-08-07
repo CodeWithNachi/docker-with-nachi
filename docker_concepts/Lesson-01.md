@@ -2,9 +2,10 @@
 sort: 1
 ---
 
-# Docker Container: Similarity With Application
+# Similarity With Application
 
 ## Intention
+ * Run a nginx web server application
  * Understand what is an image
  * Understand what is a container
  * Basic operations on a container
@@ -17,7 +18,7 @@ docker run --name mynginx -p 8090:80 -d nginx
 ```
  1. Verify the application working by visiting [http://localhost:8090](http://localhost:8090)
  1. We should be seeing the nginx welcome page
- 1. We have now run a docker container from the nginx image
+ 1. We have now run a docker container (also an nginx application) from the nginx image
 
 ## Experiment 2
  1. We can see all the containers running by the below command
@@ -42,27 +43,42 @@ docker stop mynginx
 ```bash
 docker ps
 ```
- 1. We can see that there are no running containers. `docker stop mynginx` command will stop the container named 'mynginx'
- 1. InPrivate browsing or Incognito mode, when we go to the url localhost:8090, we will find that 'site can't be reached'. This is expected as we have stopped the container
+ 1. The output should be similar to the image below indicating there are no containers running.
+ 1. We can verify that the application is not running by visiting the page [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 4
- 1. Run the command `docker ps -a`. This command shows all the containers (Including the ones that are stopped)
- 1. We should be seeing an output similar to the below image
- 1. From the image we can observe the following
-   1. Most of the things are similare to Experiment 2
-   1. The status of the container indicates that container has exited
-
+ 1. We have stopped the container and as expected the command `docker ps` is not showing our container.
+ 1. Lets see the stopped containers with `docker ps` command with `-a` option
+```bash
+docker ps -a
+```
+ 1. The command should produce an output as the below image indicating that the container is stopped
 ![docker ps -a output](/Lesson-01-Experiment-04-Picture-01.PNG)
+ 1. From the image we can observe the status of the container is exited
  
 ## Experiment 5
- 1. Run the command `docker start mynginx`. This command will start the exited container.
- 1. Run the `docker ps -a` command. we can see that container is up
- 1. Also we should be able to verify that the site is up in localhost:8090
+ 1. We now have a stopped container. Lets start it with the below command
+```bash
+docker start mynginx
+```
+ 1. As seen earlier, we can confirm the container is running by the below command
+```bash
+docker ps
+```
+ 1. Verify the application working by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 6
- 1. Run the command `docker stop mynginx`.
- 1. Now then run the command `docker rm mynginx`. This command will remove the container completely
- 1. Verify if the container is removed by running `docker ps -a`. The output should indicate there is no container in running state or exited state
+ 1. As seen earlier, lets not stop the container. And remove it in the next step
+```bash
+docker stop mynginx
+```
+```bash
+docker rm mynginx
+```
+ 1. As seen earlier, we can verify there is no containers in the running or stopped state by the below command
+```bash
+docker ps -a`
+```
  
 ## Experiment 7
  1. Run the command `docker create --name mynginx -p 8090:90 nginx`. This command creates a docker container but doesn't run it.
