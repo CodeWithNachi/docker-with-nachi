@@ -123,6 +123,10 @@ docker exec alpine-nginx uname -r
  * Docker containers do not have their own kernel. They use the host system's kernel. By doing so, dockers are much more leaner then VMs
  * They are also generally tweaked to do one thing and that one thing well. So all the unnecessary proccess and files are generally striped off.
  * Docker does not provide a way for the container to have a UI. However UI processes could be run (if we need) in the container and we could connect using a remote desktop softare.
+ * Lets now remove the container with below command
+```bash
+docker rm -f mynginx
+```
 
 # Summary
 From the experiments conducted till now we can infer the following
