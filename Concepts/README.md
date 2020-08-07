@@ -2,6 +2,6 @@
 sort: 2
 ---
 
-# Docker Concepts
+# Concepts
 
 {% include list.liquid all=true %}
