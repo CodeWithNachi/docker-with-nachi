@@ -110,14 +110,18 @@ docker exec alpine-nginx cat /etc/os-release
  * The output should look showthing like its shown in the image below. And we can observe that we are running Alpine Linux
  
 # Experiment 09
- * Now lets print the kernel information by the command `docker exec alpine-nginx uname -r`
- * Running this command, we know the first container and second container though they are using different OS are using the same kernel
+ * Now lets print the kernel information by the below command 
+```bash
+docker exec alpine-nginx uname -r
+```
+ * The output should be as shown in below. 
+ * We can observe the first container and second container though they are using different OS are using the same kernel
  * This experiment helps us understand the following
    * Each docker container can have its own operation system
    * Each docker container can have its own file system
    * They seem to using the same kernel or sharing the kernel
- * Docker containers do not have their own kernel. They use the host systems kernel. By doing so, dockers are much more leaner then VMs
- * They are also generally tweaked to do one thing and that one thing well. So all the unnecessary proccess are generally striped off.
+ * Docker containers do not have their own kernel. They use the host system's kernel. By doing so, dockers are much more leaner then VMs
+ * They are also generally tweaked to do one thing and that one thing well. So all the unnecessary proccess and files are generally striped off.
  * Docker does not provide a way for the container to have a UI. However UI processes could be run (if we need) in the container and we could connect using a remote desktop softare.
 
 # Summary
