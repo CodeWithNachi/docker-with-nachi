@@ -34,26 +34,44 @@ docker cp ./mypage.html mynginx:/usr/share/nginx/html/mypage.html
  * Lets view the page [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html) in incognito mode to verify if the modified page is available
 
 # Experiment 4
- * Now let us stop this container and run from the image
- * To stop and remove the container run the command `docker stop mynginx && docker rm mynginx`
- * Now lets run the container again by the command `docker run -p 8090:80 -d --name mynginx nginx`
- * When we go to the page http://localhost:8090/mypage.html, we are greeted with a page not message (Make sure you in incognito mode to avoid caching)
+ * We are going to stop and remove the running container, and then spin up a new container from the image
+ * First lets stop and remove the container by the below command
+```bash
+docker rm -f mynginx
+```
+ * Now lets spin up another container by the below command
+```bash
+docker run -p 8090:80 -d --name mynginx nginx
+```
+ * On visiting the page [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html), in incognito mode we will observe that the page is not found.
  * From this experiment we can understand that any change in the container is not written to the image what was used to spin up the container
  * Any change is the container will be lost once the container is removed
  
 # Experiment 5
- * Now let us add the new page in the new container by the command `docker cp ./mypage.html mynginx:/usr/share/nginx/html/mypage.html`
- * Now we should be able access the new page http://localhost:8090/mypage.html
- * We can create an image named mod-nginx from the container by the command `docker container mynginx mod-nginx`
- * We can stop and remove the current container with the command `docker stop mynginx && docker rm mynginx`
- * We can create a new container from the modifined image by the command `docker run -p 8090:80 -d --name mod-nginx nginx`
- * We can verify that container is able to serve the page http://localhost:8090/mypage.html
+ * Now let us add the new page in the new container by the belwo command 
+```bash
+docker cp ./mypage.html mynginx:/usr/share/nginx/html/mypage.html
+```
+ * We should be able to view the page [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html) in incognito mode.
+ * We can create an image named `mod-nginx` from the container by the below command 
+```bash
+docker container mynginx mod-nginx
+```
+ * We can stop and remove the current container with the below command 
+```bash
+docker rm -f mynginx
+```
 
 # Experiment 6
- * TBD Creating an image out of the contianer
-
-# Experiment 7
- * Running another container
+ * We can create a new container from the modified image by the command below. We are not creating from the default nginx image. But from mod-nginx image
+```bash
+docker run -p 8090:80 -d --name mod-nginx nginx
+```
+ * In this container we can see that page we added is available by visiting [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html)
+ * We can stop and remove the current container with the below command 
+```bash
+docker rm -f mynginx
+```
 
 # Summary
  * Any changes to the container will be lost when the container is removed
