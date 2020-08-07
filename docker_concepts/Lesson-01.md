@@ -103,7 +103,14 @@ docker ps
  1. Verify the application working by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
 
 ## Experiment 9
- 1. Run the command `docker restart mynginx`. This command restarts the docker container. This can be understood by running the `docker ps` command and observing the up time.
+ 1. Its also possible to restart the container with the below command
+```bash
+docker restart mynginx
+```
+ 1. We can verify the restart by observing the status of command below
+```bash
+docker ps
+```
  
 ## Experiment 10
  1. Run the command `docker pause mynginx`. This command pauses the docker container. This can be checked by running `docker ps -a`.
