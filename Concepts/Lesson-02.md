@@ -1,7 +1,7 @@
 ---
 sort: 2
 ---
-# Similarity And Differences With Virtual Machines
+# Comparing With Virtual Machines
 
 ## Intention
  * Understand the similarity and differences between Docker Containers and Virtual machines
@@ -39,26 +39,45 @@ docker exec -w /usr/share/nginx/html mynginx ls
  * When we browse the page in incognito mode [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html), we can observer that our newly created file is also server by nginx as a page. After all, this is something that we could expect from a nginx application
  * From the experiment, it looks like docker container has a file system that we can also modify
 
-# Experiment 04 (Getting in to the docker container shell)
- * Till now we were running commands from the host machines and some other command got executed in the docker container.
- * Now lets run the command `docker exec -w /usr/share/nginx/html -it mynginx /bin/bash`. This opens a bash shell for us to interact with the docker.
- * On running the command, we can see that prompt has changed.
- * Now we can now execute command in the bash shell directly.
- * Let verify by running the command `ls`
+# Experiment 04 (Moving to docker container prompt)
+ * Till now we were running docker commands that executed related linux command in the container. Now lets open a interactive shell of the container with the command below
+```bash
+docker exec -w /usr/share/nginx/html -it mynginx /bin/bash
+```
+ * On running the above command, we should observe that the prompt has change. This is an interactive shell of the docker container.
+ * We can run commands directly in the container now. Let's run `ls` command to see the list of files
+```bash
+ls
+```
  
-# Experiment 05 (Running command in docker container shell)
- * Let's run the linux command that prints the linux distribution `cat /etc/os-release`.
- * It looks like this docker is not just a file system but also an debian OS
+# Experiment 05 (Inside the docker container prompt)
+ * Let's run the below linux command that prints the linux distribution details
+```bash
+cat /etc/os-release
+```
+ * The ouptut should be like the image below. It looks like this docker container is not just a file system but also has an debian OS
  
-# Experiment 06 (Running command in docker container shell)  
- * Now lets run the command to list the processes `ps aux`. But on running the command, we realize that ps is not available.
- * As this docker container seems to be a Debian Linux OS, lets try to install procps by the command `apt update && apt install -y procps`
- * From the logs it would be clear that we have installed procps successfully in the docker container
- * We can verify the procps is correctly installed by running the command `ps aux`
+# Experiment 06 (Inside the docker container prompt)  
+ * Now lets run the below command to list the processes in linux
+```bash
+ps aux
+```
+ * Running the above we should get an output as shown below indicating the command is not available.
+ * As this docker container seems to be a Debian Linux OS, lets try to install procps by the below command
+```bash
+apt update && apt install -y procps
+```
+ * The output should be similar to the below image. And it would indicate procps is installed
+ * We can verify the procps is correctly installed by running the below command
+```bash
+ps aux
+```
+ * The output should look something like below. Listing all the processes that are running
  * From the experiment 
    * It feels like docker is like a virtual machine 
    * It has its own operating system
    * It has its own file system
+   * We can install software in it, and probably uninstall software from it
    * It runs it's own processes (However it seems to running lesser number of processes compared to a VM, and also the UI that is there in the VM is not there)
    
 # Experiment 07 (Running command in docker container shell)

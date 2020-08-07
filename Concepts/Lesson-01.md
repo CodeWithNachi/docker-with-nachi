@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Similarity With Application
+# Comparing With Application
 
 ## Intention
  * Run a nginx web server application
