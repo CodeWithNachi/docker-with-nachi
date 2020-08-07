@@ -113,22 +113,38 @@ docker ps
 ```
  
 ## Experiment 10
- 1. Run the command `docker pause mynginx`. This command pauses the docker container. This can be checked by running `docker ps -a`.
- 1. At this staget the docker stop and docker pause will look similar. It would be jumping to too far to understand the difference.
+ 1. Apart from starting, stoping containers we can also pause the container with the below command.
+```bash
+docker pause mynginx
+``` 
+ 1. We can observe that container is paused with the below command
+```bash
+docker ps -a
+```
+ 1. At this point, docker stop and pause would look similar. We will look the difference between stop and pause in a later section.
  
 ## Experiment 11
- 1. Run the command `docker unpause mynginx`. This will unpause the container.
- 
+ 1. As expected we can resume or unpause a paused container by the below command
+```bash
+docker unpause mynginx
+```
+
 ## Experiment 12
- 1. Run the command `docker kill mynginx`. The will kill the container.
- 1. This command is similar to docker stop. We will look at the difference between docker stop and kill at a later lesson
- 1. Run the command `docker rm mynginx` for now to remove the container.
+ 1. Apart for stopping a container it's also possible to kill a container with the below command
+```bash
+docker kill mynginx
+```
+ 1. At this point, docker stop and kill would look similar. We will look the difference between stop and pause in a later section.
+ 1. We have now completed all the experiments that are part of this lesson. Lets leave it in a clean state by removing the container with the command below
+```bash
+docker rm mynginx
+```
 
 ## Summary
-From the expreriments conducted till now we can infer the following
+From the expreriments conducted till now we could get understand the below points
  * Container is something like a running application. Image is something like a binary that was used to spin up the application. (We will refine this view in the next lesson)
  * Image is used to create a container
- * The container can be different states such as (defined in Engine api v1.24 https://docs.docker.com/engine/api/v1.24/)
+ * The container can be different states such as defined in Engine [api v1.24](https://docs.docker.com/engine/api/v1.24/)
    * created
    * restarting
    * running
@@ -136,13 +152,14 @@ From the expreriments conducted till now we can infer the following
    * exited
    * dead
  * We will look in to state transition in a latter lesson
- * docker run command to create a container and get it running
- * docker create command to create a container
- * docker start command to move a container to running state from created or exited state
- * docker pause command to pause a container
- * docker unpause command to move a container from paused state to running state
- * docker stop/kill command to move a container from running state to exited state
- * docker ps command to list all running containers and all containers
+ * docker run command is used to create a container and get it running
+ * docker create command is used to create a container
+ * docker start command is used to move a container to running state from created or exited state
+ * docker pause command is used to pause a container
+ * docker unpause command is used to move a container from paused state to running state
+ * docker stop/kill command is used to move a container from running state to exited state
+ * docker ps command to list all running containers
+ * docker ps -a command to list all running containers
 
 ## Test your self
  * What is an image?
@@ -165,6 +182,3 @@ From the expreriments conducted till now we can infer the following
    * Verify the default page is not accessible
    * Remove the container
    * Verify the removal with `docker ps -a` command
-
-   
-  
