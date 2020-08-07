@@ -80,12 +80,22 @@ ps aux
    * We can install software in it, and probably uninstall software from it
    * It runs it's own processes (However it seems to running lesser number of processes compared to a VM, and also the UI that is there in the VM is not there)
    
-# Experiment 07 (Running command in docker container shell)
- * Now lets run the linux command to display the kernel information `uname -r`
- * Running this command we see the kernel information of the docker.
- * Now that we have played around enough, lets go back to the host prompt by the command `exit`.
- * At this point docker containers look like a machine running an OS and we can run commands on it or we can interact with it by opening a terminal
- * Now lets remove the container by the command `docker stop mynginx && docker rm mynginx`
+# Experiment 07 (Inside the docker container prompt)
+ * Now lets run the below linux command to display the kernel information
+```bash
+uname -r
+```
+ * The output should be as shown below
+ * Now that we have played around enough, lets go back to the host prompt by the below command
+```bash
+exit
+```
+ * At this point docker containers look like a virutal machine running an OS and we can run commands on it or we can interact with it by opening a terminal
+ * However it didn't run many processes like a virtual machine would. Also it didn't provide us an UI that could be provided by VMs
+ * Now lets stop and remove the container. We are used to doing this in two command, but we could do it just the rm command with a flag as shown below
+```bash
+docker rm -f mynginx
+```
  
 # Experiment 08 
  * Lets play around with another version of nginx image
