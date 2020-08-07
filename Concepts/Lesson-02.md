@@ -1,28 +1,42 @@
 ---
 sort: 2
 ---
-# Lesson 02
+# Similarity And Differences With Virtual Machines
 
 ## Intention
  * Understand the similarity and differences between Docker Containers and Virtual machines
- * Run commands in containers
+ * Run commands inside containers
 
 # Experiment 01
- * Run the following commands
-   * `docker run --name mynginx -d -p 8090:80 nginx`
-   * `docker exec -w /usr/share/nginx/html mynginx ls` . This executes the command `ls` in the container named mynginx in the directory `/usr/share/nginx/html`
- * From the above command output, we know that there are 2 files (50x.html and index.html) in the directory `/usr/share/nginx/html`
+ * Lets create a container to do this experiment with the command below
+```bash
+docker run --name mynginx -d -p 8090:90 nginx
+```
+ * Now we can execute the linux command `ls` inside the container in a directory `/usr/share/nginx/html` by running the below docker command
+```bash
+docker exec -w /usr/share/nginx/html mynginx ls
+```
+ * The output of the above should look like the image below indicating there are 2 files named 50x.html and index.html in the directory `/usr/share/nginx/html` 
  * After this experiment, docker container looks more than an application, it has directories and seems to have files in it.
 
 # Experiment 02
- * In the previous experiment we listed the files.
- * Now to see the content of the file index.html, by running the command `docker exec -w /usr/share/nginx/html mynginx cat index.html`
- * We can realize that the content of index.html is what is servered in the endpoint http://localhost:8090
+ * In the previous experiment we listed the files in a directory.
+ * Now to see the content of the file index.html, by running the below command
+```bash
+docker exec -w /usr/share/nginx/html mynginx cat index.html
+```
+ * The output is as shown below. If we browse the page [http://localhost:8090](http://localhost:8090), we can observe the index files is what is getting server in the page
  
 # Experiment 03
- * Lets run the command `docker exec -w /usr/share/nginx/html mynginx sh -c 'echo "hello" > ./mypage.html'`. This creates a file name mypage.html in the directory `/usr/share/nginx/html` with the content hello 
- * By running the command `docker exec -w /usr/share/nginx/html mynginx ls`, we can verify the file is created 
- * When we hit the end point http://localhost:8090/mypage.html, we can see that our newly created file is also server by nginx
+ * Lets not create a file inside the container with the content `hello` named `mypage.html` with the command below
+```bash
+docker exec -w /usr/share/nginx/html mynginx sh -c 'echo "hello" > ./mypage.html'
+```
+ * We can veify the file is created by the below command
+```bash
+docker exec -w /usr/share/nginx/html mynginx ls
+``` 
+ * When we browse the page in incognito mode [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html), we can observer that our newly created file is also server by nginx as a page. After all, this is something that we could expect from a nginx application
  * From the experiment, it looks like docker container has a file system that we can also modify
 
 # Experiment 04 (Getting in to the docker container shell)
