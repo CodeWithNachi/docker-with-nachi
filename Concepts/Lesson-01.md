@@ -9,7 +9,9 @@ sort: 2
 ```bash
 docker run --name mynginx -p 8090:80 -d nginx
 ```
- 1. Verify the application is running by visiting [http://localhost:8090](http://localhost:8090). The page should look similar to the image below.
+ 1. The output of the command should look similar to the picture below. We can observe that it was not able to find nginx image locally, so it downloaded the image.
+![TBD](/tbd.png)
+ 1. Verify the application is running by visiting [http://localhost:8090](http://localhost:8090). The page should look similar to the picture below.
 ![TBD](/tbd.png)
  1. <strong>We have now run a nginx application as docker container</strong>
 
