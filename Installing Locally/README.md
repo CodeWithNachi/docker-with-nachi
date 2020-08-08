@@ -1,7 +1,7 @@
 ---
-sort: 4
+sort: 2
 ---
 
-# Mastering Commands
+# Installing locally
 
 {% include list.liquid %}
