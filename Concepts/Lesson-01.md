@@ -41,17 +41,18 @@ docker ps
 ```
  1. The output should be similar to the image below indicating there are no containers running.
 ![docker ps output](/L01-E03-P01.png)
- 1. We can verify that the container is not running by visiting the page [http://localhost:8090](http://localhost:8090) in incognito mode
- 
+ 1. Now, we can verify this by visiting the page [http://localhost:8090](http://localhost:8090) in incognito mode. The page should look similar to the picture below.
+
+![TBD](/tbd.png)
+
 ## Experiment 4
- 1. We have stopped the container and as expected the command `docker ps` is not showing our container.
- 1. Lets see the stopped containers with `docker ps` command with `-a` option
+ 1. We have stopped the container, and as expected the command `docker ps` is not showing mynginx container.
+ 1. The container is stopped but not removed. We can see the stopped containers with `docker ps` command with `-a` option
 ```bash
 docker ps -a
 ```
- 1. The command should produce an output as the below image indicating that the container is stopped
+ 1. The command should produce an output as the below picture indicating that the container is stopped (exited)
 ![docker ps -a output](/L01-E04-P01.png)
- 1. From the image we can observe the status of the container is exited
  
 ## Experiment 5
  1. We now have a stopped container. Lets start it with the below command
