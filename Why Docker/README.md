@@ -4,12 +4,6 @@ sort: 1
 
 # Why Docker
 
----
-sort: 1
----
-
-# Why Docker
-
 Before learning the concepts of docker. Let understand the advantages of docker.
 
  * Docker makes it easy for developers to experiment with different applications.
