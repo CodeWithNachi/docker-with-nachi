@@ -47,7 +47,7 @@ docker ps
 
 ## Experiment 4
  1. We have stopped the container, and as expected the command `docker ps` is not showing mynginx container.
- 1. The container is stopped but not removed. We can see the stopped containers with `docker ps` command with `-a` option
+ 1. The container is stopped but not removed. We can see all containers including the stopped ones with the below command
 ```bash
 docker ps -a
 ```
