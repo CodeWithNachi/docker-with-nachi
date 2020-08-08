@@ -54,7 +54,7 @@ docker ps
 docker ps -a
 ```
  1. The command should produce an output as the below image indicating that the container is stopped
-![docker ps -a output](/Lesson-01-Experiment-04-Picture-01.PNG)
+![docker ps -a output](/L01-E04-P01.png)
  1. From the image we can observe the status of the container is exited
  
 ## Experiment 5
@@ -69,7 +69,7 @@ docker ps
  1. Verify the application working by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 6
- 1. As seen earlier, lets not stop the container. And remove it in the next step
+ 1. As seen earlier, lets now stop the container. And remove it in the next step
 ```bash
 docker stop mynginx
 ```
@@ -78,7 +78,7 @@ docker rm mynginx
 ```
  1. As seen earlier, we can verify there is no containers in the running or stopped state by the below command
 ```bash
-docker ps -a`
+docker ps -a
 ```
  
 ## Experiment 7
@@ -86,10 +86,12 @@ docker ps -a`
 ```bash
 docker create --name mynginx -p 8090:80 nginx
 ```
- 1. As seen earlier, we can verify that the container is create but not running with the below command
+ 1. As seen earlier, we can verify that the container is created but not running with the below command
 ```bash
-docker ps -a`
+docker ps -a
 ```
+ 1. The output should be as shown in the image below
+![docker ps -a output](/L01-E07-P01.png) 
  1. Verify the application is not running by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 8
