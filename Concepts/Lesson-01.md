@@ -4,13 +4,6 @@ sort: 2
 
 # Comparing With Application
 
-## Intention
- * Run a nginx web server application
- * Understand what is an image
- * Understand what is a container
- * Basic operations on a container
- * States of the container
-
 ## Experiment 1
  1. We can run a nginx web server application by the below command
 ```bash
