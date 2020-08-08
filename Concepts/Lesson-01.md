@@ -55,54 +55,48 @@ docker ps -a
 ![docker ps -a output](/L01-E04-P01.png)
  
 ## Experiment 5
- 1. We now have a stopped container. Lets start it with the below command
+ 1. Lets start the stopped container with the below command
 ```bash
 docker start mynginx
 ```
- 1. As seen earlier, we can verify the container is running by visiting [http://localhost:8090](http://localhost:8090) in incognito mode and also by running the below command
+ 1. As seen earlier, we can verify that the container is running by visiting [http://localhost:8090](http://localhost:8090) in incognito mode, and also by running the below command
 ```bash
 docker ps
 ```
  
 ## Experiment 6
- 1. As seen earlier, lets now stop the container. And remove it in the next step
+ 1. We have learnt how to stop a container. Now lets stop and <strong>remove</strong> the container by the below commands.
 ```bash
 docker stop mynginx
 ```
 ```bash
 docker rm mynginx
 ```
- 1. As seen earlier, we can verify there is no containers in the running or stopped state by the below command
+ 1. We can now verify the containers is <strong>not</strong> present (in either running or stopped state) by the below command
 ```bash
 docker ps -a
 ```
  
 ## Experiment 7
- 1. We have now seen how to run a container, stop it and remove it. We can also create a container without running it with the command below
+ 1. We know how run (create and start) a container. We can also create a container without starting it with the command below
 ```bash
 docker create --name mynginx -p 8090:80 nginx
 ```
- 1. As seen earlier, we can verify that the container is created but not running with the below command
+ 1. We can verify that the container is created but not running with the below command. Its output will be as shown in the picture below.
 ```bash
 docker ps -a
 ```
- 1. The output should be as shown in the image below
 ![docker ps -a output](/L01-E07-P01.png) 
- 1. Verify the application is not running by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 8
- 1. We now have a container that is created but not running. We can run it with the below command
+ 1. We now have a container that is created but not yet running. We can run it with the below command
 ```bash
 docker start mynginx
 ```
- 1. As seen earlier, we can confirm the container is running by the below command
-```bash
-docker ps
-```
- 1. Verify the application working by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
+ 1. Verify the container is running by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
 
 ## Experiment 9
- 1. Its also possible to restart the container with the below command
+ 1. Its also possible to restart the running container (or a stopped container) with the below command
 ```bash
 docker restart mynginx
 ```
