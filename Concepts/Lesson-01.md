@@ -59,11 +59,10 @@ docker ps -a
 ```bash
 docker start mynginx
 ```
- 1. As seen earlier, we can confirm the container is running by the below command
+ 1. As seen earlier, we can verify the container is running by visiting [http://localhost:8090](http://localhost:8090) in incognito mode and also by running the below command
 ```bash
 docker ps
 ```
- 1. Verify the application working by visiting [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 6
  1. As seen earlier, lets now stop the container. And remove it in the next step
