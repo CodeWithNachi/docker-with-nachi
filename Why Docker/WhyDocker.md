@@ -1,6 +1,9 @@
 # Why Docker
 
-Before learning the concepts of docker. Let understand the advantages of docker.
+Before getting in to the details of how to use docker, let understand the advantages of using a docker. For looking at the benfits of docker, we can look at docker as a way to distribute applications and as a lighter alternative to virtual machines.
+
+## Portability of Docker
+ When an application is dockerized. It would be easy to run the application in nearly any machine that 
 
 ## Installation/Unistallation of applications is easy and secure:
  For a docker user, installing and uninstalling applications such as MongoDB, PostgreSQL, RabbitMQ, Kafka, RedisCache, Keycloak are extraordinarily easy. The applications could in installed and uninstalled in a single command. When running the applicaitons as a docker container it gives a very good degree or isolation. The docker containers don't interfer with the system files making it much more secure.  
