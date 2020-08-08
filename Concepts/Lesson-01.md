@@ -31,17 +31,17 @@ docker ps
    1. The status: The status of the container
 
 ## Experiment 3
- 1. Till now we have run a container, and seen info about it. Now lets stop the container by the below command
+ 1. Till now we have run a container, and seen the info about it. Now lets stop the container by the below command
 ```bash
 docker stop mynginx
 ```
- 1. Now we can verify that the container is stopped by running the below command
+ 1. To verify if the container has stopped, lets run the below command
 ```bash
 docker ps
 ```
-![docker ps output](/L01-E03-P01.png)
  1. The output should be similar to the image below indicating there are no containers running.
- 1. We can verify that the application is not running by visiting the page [http://localhost:8090](http://localhost:8090) in incognito mode
+![docker ps output](/L01-E03-P01.png)
+ 1. We can verify that the container is not running by visiting the page [http://localhost:8090](http://localhost:8090) in incognito mode
  
 ## Experiment 4
  1. We have stopped the container and as expected the command `docker ps` is not showing our container.
