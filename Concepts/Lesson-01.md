@@ -43,6 +43,7 @@ docker stop mynginx
 ```bash
 docker ps
 ```
+![docker ps output](/L01-E03-P01.png)
  1. The output should be similar to the image below indicating there are no containers running.
  1. We can verify that the application is not running by visiting the page [http://localhost:8090](http://localhost:8090) in incognito mode
  
