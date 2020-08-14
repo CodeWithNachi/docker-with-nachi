@@ -11,23 +11,41 @@ sort: 5
  * Accessing one docker from another
 
 ## Experiment 1
- * Lets run the command `docker run -d --name mymodnginx modified-nginx`
+ * Prerequisite: Creation of modified-nginx image as seen in the previous lesson
+ * Lets run the command below to run the modified nginx
+```bash
+docker run -d --name mymodnginx modified-nginx
+```
  * Now the container is running and it can serve the web page, but we can not access it from the host system
- * We can verify this by the command `docker exec mymodnginx curl http://localhost:80`. This will run curl from within the container
- * We can access this page from the host machine
+ * We can verify this by the below command. This will run curl from within the container
+```bash
+docker exec mymodnginx curl http://localhost:80
+```
 
 ## Experiment 2
  * Now lets run another container from the same image this time with publishing the containers port
- * Running the command `docker run -d --name mymodnginx-new --publish 8090:80 modified-nginx` we can see the page by at the end point http://localhost:8090
+ * Running the below command and we can see the page by at the end point http://localhost:8090
+```bash
+docker run -d --name mymodnginx-new --publish 8090:80 modified-nginx
+```
  * We could also run the shorter verision of the command `docker run -d --name mymodnginx-new -p 8090:80 modified-nginx`
  * We have now seen how to access a service running in docker from host machine. Now lets see how to access a host service from docker
 
 ## Experiment 3
- * To simulate running a service in the host machine let's run the command `docker run --name local -d -p 8090:80 nginx`
+ * To simulate running a service in the host machine let's run the command below
+```bash
+docker run --name local -d -p 8090:80 nginx
+```
  * Let now create a new docker container and access the service running is 8090
- * Let's create a container by the command `docker run --name mynginx -d nginx`
- * The host machine is accessible in the URI host.docker.internal
- * Let run the command `docker exec mynginx curl host.docker.internal:8090`
+ * Let's create a container by the command 
+```bash
+docker run --name mynginx -d nginx
+```
+ * The host machine is accessible in the URI `host.docker.internal`
+ * Let run the command belwo to verify it
+```bash
+docker exec mynginx curl host.docker.internal:8090
+```
  * By the output of the above command we know that we can reach host service from a docker container 
 
 ## Experiment 4
@@ -35,10 +53,18 @@ sort: 5
  * We can create a network in docker.
  * A docker container can be part of many networks.
  * A docker container can communicate with the other using the name. Let's try this out by the below command
-   * `docker network create -d bridge mynet`
-   * `docker run --name container1 -d --network mynet nginx`
-   * `docker run --name container2 -d --network mynet nginx`
-   * `docker exec container1 curl container2`
+```bash
+docker network create -d bridge mynet
+```
+```bash
+docker run --name container1 -d --network mynet nginx
+```
+```bash
+docker run --name container2 -d --network mynet nginx
+```
+```bash
+docker exec container1 curl container2
+```
  
  ## Experiment 5
  * Now lets run the same experiment without specifing the network
