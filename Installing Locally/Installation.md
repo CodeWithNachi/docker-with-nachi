@@ -1,5 +1,5 @@
 # Installation
-This document provides the information about the version of docker to be installed.
+This document provides the link to documents that describe how to install docker
 
  * For Windows 10 Pro, Enterprise, Educations, please refer [here](https://docs.docker.com/docker-for-windows/install/)
  * For Windows 10 Home, please refer [here](https://docs.docker.com/docker-for-windows/install-windows-home/)
