@@ -3,7 +3,8 @@ sort: 2
 ---
 
 # Docker - Application Packaging
-We will see the following
+
+## What we will see
  * How easy is run an application packaged as docker
  * What are the states a dockerized application can be in
  * We will be understanding all this by running a series of experiments

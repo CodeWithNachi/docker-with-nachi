@@ -1,13 +1,14 @@
 ---
 sort: 3
 ---
-# Comparing With Virtual Machines
+# What does docker package?
 
-## Intention
- * Understand the similarity and differences between Docker Containers and Virtual machines
- * Run commands inside containers
+## What we will see
+ * We'll see docker packages not only the application
+ * It nearly packages the entire operating system
+ * It leaves out the kernel (which contains the scheduler) while packaging. All docker containers will will use host container. 
 
-# Experiment 01
+## Experiment 01
  * Lets create a container to do this experiment with the command below
 ```bash
 docker run --name mynginx -d -p 8090:90 nginx
@@ -19,7 +20,7 @@ docker exec -w /usr/share/nginx/html mynginx ls
  * The output of the above should look like the image below indicating there are 2 files named 50x.html and index.html in the directory `/usr/share/nginx/html` 
  * After this experiment, docker container looks more than an application, it has directories and seems to have files in it.
 
-# Experiment 02
+## Experiment 02
  * In the previous experiment we listed the files in a directory.
  * Now to see the content of the file index.html, by running the below command
 ```bash
@@ -27,7 +28,7 @@ docker exec -w /usr/share/nginx/html mynginx cat index.html
 ```
  * The output is as shown below. If we browse the page [http://localhost:8090](http://localhost:8090), we can observe the index files is what is getting server in the page
  
-# Experiment 03
+## Experiment 03
  * Lets not create a file inside the container with the content `hello` named `mypage.html` with the command below
 ```bash
 docker exec -w /usr/share/nginx/html mynginx sh -c 'echo "hello" > ./mypage.html'
@@ -39,7 +40,7 @@ docker exec -w /usr/share/nginx/html mynginx ls
  * When we browse the page in incognito mode [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html), we can observer that our newly created file is also server by nginx as a page. After all, this is something that we could expect from a nginx application
  * From the experiment, it looks like docker container has a file system that we can also modify
 
-# Experiment 04 (Moving to docker container prompt)
+## Experiment 04 (Moving to docker container prompt)
  * Till now we were running docker commands that executed related linux command in the container. Now lets open a interactive shell of the container with the command below
 ```bash
 docker exec -w /usr/share/nginx/html -it mynginx /bin/bash
@@ -50,14 +51,14 @@ docker exec -w /usr/share/nginx/html -it mynginx /bin/bash
 ls
 ```
  
-# Experiment 05 (Inside the docker container prompt)
+## Experiment 05 (Inside the docker container prompt)
  * Let's run the below linux command that prints the linux distribution details
 ```bash
 cat /etc/os-release
 ```
  * The ouptut should be like the image below. It looks like this docker container is not just a file system but also has an debian OS
  
-# Experiment 06 (Inside the docker container prompt)  
+## Experiment 06 (Inside the docker container prompt)  
  * Now lets run the below command to list the processes in linux
 ```bash
 ps aux
@@ -80,7 +81,7 @@ ps aux
    * We can install software in it, and probably uninstall software from it
    * It runs it's own processes (However it seems to running lesser number of processes compared to a VM, and also the UI that is there in the VM is not there)
    
-# Experiment 07 (Inside the docker container prompt)
+## Experiment 07 (Inside the docker container prompt)
  * Now lets run the below linux command to display the kernel information
 ```bash
 uname -r
@@ -97,7 +98,7 @@ exit
 docker rm -f mynginx
 ```
  
-# Experiment 08 
+## Experiment 08 
  * Lets now play around with an image that has nginx installed on top a alpine distro. Lets run the container by the below command.
 ```bash
 docker run --name alpine-nginx -d nginx:1.19.1-alpine
@@ -109,7 +110,7 @@ docker exec alpine-nginx cat /etc/os-release
 ```
  * The output should look showthing like its shown in the image below. And we can observe that we are running Alpine Linux
  
-# Experiment 09
+## Experiment 09
  * Now lets print the kernel information by the below command 
 ```bash
 docker exec alpine-nginx uname -r
@@ -128,16 +129,16 @@ docker exec alpine-nginx uname -r
 docker rm -f mynginx
 ```
 
-# Summary
-From the experiments conducted till now we can infer the following
+## Summary
+From the experiments conducted till now we can understand the following
  * Container is something like a Virtual machine.
  * Each container has a file system, and can run processes in it.
- * Unline a VM, a container does not have it's own scheduler. It shares the scheduler with the host machine.
+ * Unline a VM, a container does not have it's own kernel (scheduler). It shares the kernel with the host machine.
  * Containers are leaner than virtual machines
    * Containers has lesser number of files in the file system compared to VMs
    * Containers has lesser number of processes running in it compared to VMs
    * Containers has lesser softwares installed in it compared to VMs
- * Generally the practice is to create a container that can do one job, and only softwares needed to do that job is installed.
+ * Generally the practice is to create an image that can do one job, and only softwares needed to do that job is installed.
 
 # Test your self
  * Run a container from nginx image
