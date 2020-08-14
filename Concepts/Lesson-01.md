@@ -2,7 +2,10 @@
 sort: 2
 ---
 
-# Comparing With Application
+# Docker - Application Packaging
+We will see the following
+ * How easy is run an application packaged as docker
+ * What are the states a dockerized application can be in
 
 ## Experiment 1
  1. We can run a nginx web server application by the below command
