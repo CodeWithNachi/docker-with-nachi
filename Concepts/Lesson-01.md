@@ -6,6 +6,7 @@ sort: 2
 We will see the following
  * How easy is run an application packaged as docker
  * What are the states a dockerized application can be in
+ * We will be understanding all this by running a series of experiments
 
 ## Experiment 1
  1. We can run a nginx web server application by the below command
