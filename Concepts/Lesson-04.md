@@ -66,37 +66,73 @@ docker run --name container2 -d --network mynet nginx
 docker exec container1 curl container2
 ```
  
- ## Experiment 5
+## Experiment 5
  * Now lets run the same experiment without specifing the network
-   * `docker run --name container1 -d nginx`
-   * `docker run --name container2 -d nginx`
-   * `docker exec container1 curl container2`
+```bash
+docker run --name container1 -d nginx
+```
+```bash
+docker run --name container2 -d nginx
+```
+```bash
+docker exec container1 curl container2
+```
  * The output should indicate the containers are not able to communicate with each other
  * When no network is specified docker associates the container in the default bridge network. The default bridge network does not support name resolution.
  * However communication is possible through IP without name resolution
  
- ## Experiment 6
+## Experiment 6
  * Lets try to communicate through IP address
- * The IP address of a container named container2 could be got through the command `docker inspect container2`
+ * The IP address of a container named container2 could be got through the command 
+```bash
+docker inspect container2
+```
  * The above command gives a lot of information, we can filter only the IP by adding a format as shown below
- * `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container2`
- * Now we should be able access service in container2 from container1 by `docker exec container1 curl <container2-ip>`
+```bash
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container2
+```
+ * Now we should be able access service in container2 from container1 by 
+```bash
+docker exec container1 curl <container2-ip>
+```
  
  ## Experiment 7
  * Lets try to communicate between docker containers running in different networks by the below commands
- * `docker network create net1`
- * `docker network create net2`
- * `docker run --name web1 --network net1 -d nginx`
- * `docker run --name web2 --network net2 -d nginx`
- * We can verify that web2 is not reachable from container web1 by the running the command `docker exec web1 curl web1`
+```bash
+docker network create net1
+```
+```bash
+docker network create net2
+```
+```bash
+docker run --name web1 --network net1 -d nginx
+```
+```bash
+docker run --name web2 --network net2 -d nginx
+```
+ * We can verify that web2 is not reachable from container web1 by the running the command 
+```bash
+docker exec web1 curl web1
+```
  * We can repeat the experiment by specifying the ip address instead of the name. The command for getting the IP address is below
- * `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web2`
- * Command to attempt access of web2 is docker exec web1 curl <ip-address of web2>
- 
+```bash
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web2
+```
+ * Command to attempt access of web2 is 
+```bash
+docker exec web1 curl <ip-address of web2>
+```
+
  ## Experiment 8
  * Now we could connect the container web2 to net1 and we can verify connectivity between web1 and web2
- * To connect web2 and net1 run the command `docker network connect net1 web2`
- * Now we should be able access web2 home page from web1 by `docker exec web1 curl web2`
+ * To connect web2 and net1 run the command 
+```bash
+docker network connect net1 web2
+```
+ * Now we should be able access web2 home page from web1 by 
+```bash
+docker exec web1 curl web2
+```
  
 # Summary
  * We can publish the docker container port using --publish or -p option
