@@ -1,11 +1,11 @@
 ---
 sort: 5
 ---
-# Lesson 04
+# Docker networking
 
 ## Intention
  * Understand the docker networking basics
- * Understand exposing a port to the host machine
+ * Understand exposing a port to the host machine (publish)
  * Accessing the docker from host
  * Accessing the host from docker
  * Accessing one docker from another

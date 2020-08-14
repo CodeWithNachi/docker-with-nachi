@@ -3,7 +3,7 @@ sort: 4
 ---
 # Container changes are short lived
 
-## Intention
+## What we will see
  * Understand the changes to container are not going to affect the image
  * How to create a image out of a container
  * Ways to copy files in and out of container
