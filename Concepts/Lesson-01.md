@@ -143,8 +143,8 @@ docker rm mynginx
 
 ## Summary
 From the expreriments conducted till now we could understand the below points
- * Container is something like a running application. Image is something like a binary that was used to spin up the application. (We will refine this view in the next lesson)
- * Image is used to create a container
+ * Container is the running instance of dockerized application.
+ * Image is the binary that is used to spin up a container
  * The container can be different states such as defined in Engine [api v1.24](https://docs.docker.com/engine/api/v1.24/)
    * created
    * restarting
