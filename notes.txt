@@ -1,0 +1,17 @@
+To Be Done
+ * Docker Volume basics
+ * Dockerfile
+ * Environment Variables
+ * Docker on Windows
+
+ * Beyond docker podman and rkt
+
+Docker on Cloud
+ * Docker on AWS
+ * Docker on Azure
+ * Docker on GCP
+ * Docker Image commands
+ * Docker Container command
+ * Docker Volume commands
+ * Docker Network commands
+ * Need to see the differences between pause and stop
