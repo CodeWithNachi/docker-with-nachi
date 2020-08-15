@@ -76,12 +76,12 @@ docker rm -f mynginx
 # Experiment 6
  * We can create a new container from the modified image by the command below. We are not creating from the default nginx image. But from mod-nginx image
 ```bash
-docker run -p 8090:80 -d --name mod-nginx nginx
+docker run -p 8090:80 -d --name mymodnginx mod-nginx
 ```
  * In this container we can see that page we added is available by visiting [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html)
  * We can stop and remove the current container with the below command 
 ```bash
-docker rm -f mynginx
+docker rm -f mymodnginx
 ```
 
 # Summary
