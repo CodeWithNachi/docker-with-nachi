@@ -1,7 +1,7 @@
 ---
 sort: 3
 ---
-# What does docker package?
+# What Does Docker Package
 
 ## What we will see
  * We'll see docker packages not only the application
