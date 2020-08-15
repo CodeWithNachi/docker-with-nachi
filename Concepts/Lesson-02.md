@@ -6,7 +6,7 @@ sort: 3
 ## What we will see
  * We'll see docker packages not only the application
  * It nearly packages the entire operating system
- * It leaves out the kernel (which contains the scheduler) while packaging. All docker containers will will use host container. 
+ * It leaves out the kernel (which contains the scheduler) while packaging. All docker containers will will use host kernel. 
 
 ## Experiment 01
  * Lets create a container to do this experiment with the command below
@@ -17,8 +17,9 @@ docker run --name mynginx -d -p 8090:90 nginx
 ```bash
 docker exec -w /usr/share/nginx/html mynginx ls
 ```
- * The output of the above should look like the image below indicating there are 2 files named 50x.html and index.html in the directory `/usr/share/nginx/html` 
- * After this experiment, docker container looks more than an application, it has directories and seems to have files in it.
+ * The output of the above should look like the image below indicating there are 2 files named 50x.html and index.html in the directory `/usr/share/nginx/html`
+![viewing the filesystem inside docker](/L02-E01-P01.png) 
+ * Now we have seen that docker is not only packaging the application. It can have files as well packaged in it.
 
 ## Experiment 02
  * In the previous experiment we listed the files in a directory.
@@ -27,16 +28,23 @@ docker exec -w /usr/share/nginx/html mynginx ls
 docker exec -w /usr/share/nginx/html mynginx cat index.html
 ```
  * The output is as shown below. If we browse the page [http://localhost:8090](http://localhost:8090), we can observe the index files is what is getting server in the page
+![viewing the contents of a file](/L02-E02-P01.png) 
  
 ## Experiment 03
  * Lets not create a file inside the container with the content `hello` named `mypage.html` with the command below
+ * If you are running commands in bash
 ```bash
 docker exec -w /usr/share/nginx/html mynginx sh -c 'echo "hello" > ./mypage.html'
 ```
- * We can veify the file is created by the below command
+ * If you are running commands in windows command prompt
+```bash
+docker exec -w /usr/share/nginx/html mynginx sh -c "echo hello > ./mypage.html"
+```
+ * We can veify the file is created by the below command, and the output should look something like below picture
 ```bash
 docker exec -w /usr/share/nginx/html mynginx ls
-``` 
+```
+![listing the newly created file](/L02-E03-P01.png) 
  * When we browse the page in incognito mode [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html), we can observer that our newly created file is also server by nginx as a page. After all, this is something that we could expect from a nginx application
  * From the experiment, it looks like docker container has a file system that we can also modify
 
