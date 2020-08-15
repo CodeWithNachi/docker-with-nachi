@@ -1,15 +1,15 @@
 ---
 sort: 3
 ---
-# What Does Docker Package
+# What Does a Docker Package
 
-## What we will see
- * We'll see docker packages not only the application
+
+ * Docker packages not only the application
  * It nearly packages the entire operating system
  * It leaves out the kernel (which contains the scheduler) while packaging. All docker containers will will use host kernel. 
 
 ## Experiment 01
- * Lets create a container to do this experiment with the command below
+ * Lets create a container with the command below
 ```bash
 docker run --name mynginx -d -p 8090:90 nginx
 ```
@@ -23,20 +23,16 @@ docker exec -w /usr/share/nginx/html mynginx ls
 
 ## Experiment 02
  * In the previous experiment we listed the files in a directory.
- * Now to see the content of the file index.html, by running the below command
+ * Now to see the content of the file index.html, run the below command
 ```bash
 docker exec -w /usr/share/nginx/html mynginx cat index.html
 ```
- * The output is as shown below. If we browse the page [http://localhost:8090](http://localhost:8090), we can observe the index files is what is getting server in the page
+ * The output of the command is as shown below in the picture.
 ![viewing the contents of a file](/L02-E02-P01.png) 
+ * When we browse the page [http://localhost:8090](http://localhost:8090), we can observe that the `index.html` files is what is getting served as the page
  
 ## Experiment 03
- * Lets not create a file inside the container with the content `hello` named `mypage.html` with the command below
- * If you are running commands in bash
-```bash
-docker exec -w /usr/share/nginx/html mynginx sh -c 'echo "hello" > ./mypage.html'
-```
- * If you are running commands in windows command prompt
+ * Lets now create a file inside the container with the content `hello` named `mypage.html` with the command below
 ```bash
 docker exec -w /usr/share/nginx/html mynginx sh -c "echo hello > ./mypage.html"
 ```
@@ -45,15 +41,15 @@ docker exec -w /usr/share/nginx/html mynginx sh -c "echo hello > ./mypage.html"
 docker exec -w /usr/share/nginx/html mynginx ls
 ```
 ![listing the newly created file](/L02-E03-P01.png) 
- * When we browse the page in incognito mode [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html), we can observer that our newly created file is also server by nginx as a page. After all, this is something that we could expect from a nginx application
+ * When we browse the page in incognito mode [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html), we can observe that our newly created file is also served by nginx as a page. After all, this is something that we could expect from an nginx application
  * From the experiment, it looks like docker container has a file system that we can also modify
 
 ## Experiment 04 (Moving to docker container prompt)
- * Till now we were running docker commands that executed related linux command in the container. Now lets open a interactive shell of the container with the command below
+ * Till now we were running docker commands that executed related linux commands in the container. Now lets open an interactive shell of the container with the command below
 ```bash
 docker exec -w /usr/share/nginx/html -it mynginx /bin/bash
 ```
- * On running the above command, we should observe that the prompt has change. This is an interactive shell of the docker container.
+ * On running the above command, we should observe that the prompt has changed. This is an interactive shell of the docker container.
  * We can run commands directly in the container now. Let's run `ls` command to see the list of files
 ```bash
 ls
@@ -64,7 +60,7 @@ ls
 ```bash
 cat /etc/os-release
 ```
- * The ouptut should be like the image below. It looks like this docker container is not just a file system but also has an debian OS
+ * The ouptut should be like the image below. It looks like this docker container is not just a file system but also has a debian OS
  
 ## Experiment 06 (Inside the docker container prompt)  
  * Now lets run the below command to list the processes in linux
