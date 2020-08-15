@@ -1,4 +1,4 @@
-remote_theme: CodeWithNachi/docsy-jekyll
+remote_theme: CodeWithNachi/jekyll-rtd-theme
 readme_index:
   with_frontmatter: true
 exclude:
