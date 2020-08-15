@@ -1,6 +1,7 @@
 remote_theme: CodeWithNachi/jekyll-rtd-theme
 readme_index:
   with_frontmatter: true
+show_sorted: false
 exclude:
  - notes.txt
  - notes1.txt
