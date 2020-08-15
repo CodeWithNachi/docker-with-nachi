@@ -1,7 +1,7 @@
 ---
 sort: 4
 ---
-# Container changes are short lived
+# Changes To Container Are Not Persisted
 
 ## What we will see
  * Understand the changes to container are not going to affect the image
