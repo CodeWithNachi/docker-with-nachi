@@ -5,11 +5,11 @@ sort: 4
 
 ## What we will see
  * Understand the changes to container are not going to affect the image
- * How to create a image out of a container
+ * How to create an image out of a container
  * Ways to copy files in and out of container
 
 # Experiment 1
- * Lets run a nginx container with the below command
+ * Lets run an nginx container with the below command
 ```bash
 docker run -p 8090:80 -d --name mynginx nginx
 ```
@@ -19,7 +19,7 @@ docker exec -it mynginx -w /usr/share/nginx/html mynginx ls
 ```
  
 # Experiment 2
- * From a command prompt, in a directory where we have write permission, lets run below command to copy index.html to host machine
+ * From a command prompt, in a directory where we have written permission, lets run the below command to copy index.html to host machine
 ```bash
 docker cp mynginx:/usr/share/nginx/html/index.html ./mypage.html
 ```
@@ -45,10 +45,10 @@ docker run -p 8090:80 -d --name mynginx nginx
 ```
  * On visiting the page [http://localhost:8090/mypage.html](http://localhost:8090/mypage.html), in incognito mode we will observe that the page is not found.
  * From this experiment we can understand that any change in the container is not written to the image what was used to spin up the container
- * Any change is the container will be lost once the container is removed
+ * Any change in the container will be lost once the container is removed
  
 # Experiment 5
- * Now let us add the new page in the new container by the belwo command 
+ * Now let us add the new page in the new container by the below command 
 ```bash
 docker cp ./mypage.html mynginx:/usr/share/nginx/html/mypage.html
 ```
