@@ -3,4 +3,5 @@ readme_index:
   with_frontmatter: true
 exclude:
  - notes.txt
+ - notes1.txt
 
