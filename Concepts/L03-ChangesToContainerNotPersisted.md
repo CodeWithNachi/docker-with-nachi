@@ -19,7 +19,7 @@ docker exec -w /usr/share/nginx/html mynginx ls
 ```
  
 # Experiment 2
- * From a command prompt, in a directory where we have written permission, lets run the below command to copy index.html to host machine
+ * From a command prompt, in a directory(folder) where we have written permission, lets run the below command to copy index.html to host machine
 ```bash
 docker cp mynginx:/usr/share/nginx/html/index.html ./mypage.html
 ```
