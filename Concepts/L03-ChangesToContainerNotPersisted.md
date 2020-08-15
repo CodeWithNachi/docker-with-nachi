@@ -15,7 +15,7 @@ docker run -p 8090:80 -d --name mynginx nginx
 ```
  * Lets run the below command to list the contents of the directory `/usr/share/nginx/html`
 ```bash
-docker exec -it mynginx -w /usr/share/nginx/html mynginx ls
+docker exec -it -w /usr/share/nginx/html mynginx ls
 ```
  
 # Experiment 2
