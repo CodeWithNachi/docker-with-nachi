@@ -51,7 +51,7 @@ docker ps
 ![docker ps output](/L01-E03-P01.png)
  1. Now, we can verify this by visiting the page [http://localhost:8090](http://localhost:8090) in incognito mode. The page should look similar to the picture below.
 
-![TBD](/tbd.png)
+![Unreachable page](/L01-E03-P02.png)
 
 ## Experiment 4
  1. We have stopped the container, and as expected the command `docker ps` is not showing mynginx container.
