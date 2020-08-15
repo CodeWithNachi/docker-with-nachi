@@ -14,12 +14,15 @@ sort: 2
 ```bash
 docker run --name mynginx -p 8090:80 -d nginx
 ```
+ 1. It is possible that this command can fail due to authentication. Then you could create an account with docker hub and login as described [here - TBD](https://www.google.com)
  1. The output of the command should look similar to the picture below. We can observe that it was not able to find nginx image locally, so it downloaded the image.
 
-![TBD](/tbd.png)
+![Download and Run Image](/L01-E01-P01.png)
  1. Verify the application is running by visiting [http://localhost:8090](http://localhost:8090). The page should look similar to the picture below.
+ 
+ 
 
-![TBD](/tbd.png)
+![nginx page](/L01-E01-P02.png.png)
  1. <strong>We have now run a nginx application as docker container</strong>
 
 ## Experiment 2
