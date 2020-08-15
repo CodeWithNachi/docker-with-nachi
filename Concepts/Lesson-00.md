@@ -4,7 +4,7 @@ sort: 1
 
 # What is Docker
 
- * Without answering the question 'What is docker?', lets see what does docker provide us.
+ * Without answering the question 'What is docker?', let's see what does docker provide us.
  * Docker provides us with the ability to package applications.
  * The packaged application (binary) is called as a docker image.
  * When the packaged application is run, the running instance of the packaged application is called as docker container.
