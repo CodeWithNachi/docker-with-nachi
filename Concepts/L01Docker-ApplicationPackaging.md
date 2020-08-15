@@ -5,12 +5,12 @@ sort: 2
 # Docker - Application Packaging
 
 ## What we will see
- * How easy is run an application packaged as docker
+ * How easy is to run an application packaged as docker
  * What are the states a dockerized application can be in
- * We will be understanding all this by running a series of experiments
+ * We will be understanding all these by running a series of experiments
 
 ## Experiment 1
- 1. We can run a nginx web server application by the below command
+ 1. We can run an nginx web server application by the below command
 ```bash
 docker run --name mynginx -p 8090:80 -d nginx
 ```
@@ -23,7 +23,7 @@ docker run --name mynginx -p 8090:80 -d nginx
  
 
 ![nginx page](/L01-E01-P02.png.png)
- 1. <strong>We have now run a nginx application as docker container</strong>
+ 1. <strong>We have now run an nginx application as docker container</strong>
 
 ## Experiment 2
  1. We can see all the containers running by the below command
@@ -146,7 +146,7 @@ docker rm mynginx
 ```
 
 ## Summary
-From the experiments conducted till now we could understand the below points
+From the experiments conducted till now we can understand the below points
  * Container is the running instance of dockerized application.
  * Image is the binary that is used to spin up a container
  * The container can be different states such as defined in Engine [api v1.24](https://docs.docker.com/engine/api/v1.24/)
