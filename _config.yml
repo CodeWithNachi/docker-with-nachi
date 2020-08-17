@@ -1,4 +1,4 @@
-remote_theme: TrainingRepo/jekyll-rtd-theme
+remote_theme: CodeWithNachi/jekyll-rtd-theme
 readme_index:
   with_frontmatter: true
 show_sorted: false
