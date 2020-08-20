@@ -10,5 +10,7 @@ sort: 1
 # Experiment 1
  * Lets run an mysql container with the below command
 ```bash
-docker container run -d --name mysql mysql
+docker  run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 ```
+
+
