@@ -13,6 +13,11 @@ sort: 1
 ```bash
 docker  run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 ```
+```bash
+docker  inspect mysql
+```
 * Now if you do a docker inspect you should be able to  the below output under mounts which will show a unique location under host to store the date
+* The output will be as shown below in the picture.
+![viewing my page](/L05-E01-P01.png)
 
 
