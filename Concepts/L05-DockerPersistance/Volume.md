@@ -24,9 +24,8 @@ docker  inspect mysql
 * The output will be as shown below in the picture.
 ![viewing my page](/L05-E01-P01.png)
 
-
 ```bash
-docker  inspect mysql
+docker volume ls
 ```
 * Now if we do a volume ls it will show a volume automatically created
 ![viewing my page](/L05-E01-P02.png)
