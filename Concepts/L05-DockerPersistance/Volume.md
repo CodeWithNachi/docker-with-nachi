@@ -4,7 +4,7 @@ sort: 1
 
 # Volume --> Persitent Data
 
-* In order to check if we need to worry about using a volume we need to have a look at the docker file of a container. Go to hub.docker.com and check the docker file of any container. I am using MYSQL as an example as details would always have volume
+* In order to check if we need to worry about using a volume we need to have a look at the docker file of a container. Go to [Docker Hub] (hub.docker.com) and check the docker file of any container. I am using MYSQL as an example as details would always have volume
 
 ![viewing my page](/L05-E01-P03.png)
 
@@ -17,24 +17,27 @@ sort: 1
 ```bash
 docker  run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 ```
+# Experiment 2
+* Now we will do an inspect and check if the location of the mounts, which in any case should always be a unique location on the host machine.
 ```bash
 docker  inspect mysql
 ```
-* Now if you do a docker inspect you should be able to  the below output under mounts which will show a unique location under host to store the date
 * The output will be as shown below in the picture.
 ![viewing my page](/L05-E01-P01.png)
-
+#Experiment 3
+* Now we check if the volume which we created is existing or not
 ```bash
 docker volume ls
 ```
-* Now if we do a volume ls it will show a volume automatically created
+* The output will be as shown below in the picture.
 ![viewing my page](/L05-E01-P02.png)
 
-
+#Experiment 4 
+*
 
 # Summary
  * Need to check the docker file of a container if you need to worry about volumes
- * Volume has to be deleted manually
+ * Volume has to be deleted manually( Database will outlived the executable) 
 
 
 # Test youself
