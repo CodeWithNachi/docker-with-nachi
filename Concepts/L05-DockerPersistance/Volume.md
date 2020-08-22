@@ -6,7 +6,7 @@ sort: 1
 
 * In order to check if we need to worry about using a volume we need to have a look at the docker file of a container. Go to [Docker Hub] (hub.docker.com) and check the docker file of any container. I am using MYSQL as an example as details would always have volume
 
-![viewing my page](/L05-E01-P03.png)
+![viewing my page](/L05-E01-P03.PNG)
 
 ## What we will see here
 * Creation of volume which is outside the container 
@@ -23,7 +23,7 @@ docker  run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 docker  inspect mysql
 ```
 * The output will be as shown below in the picture.
-![viewing my page](/L05-E01-P01.png)
+![viewing my page](/L05-E01-P01.PNG)
 # Experiment 3
 * Now we check if the volume which we created is existing or not
 * This is not so user friendly as it don't tell us which container this volume is assigned to
@@ -31,7 +31,7 @@ docker  inspect mysql
 docker volume ls
 ```
 * The output will be as shown below in the picture.
-![viewing my page](/L05-E01-P02.png)
+![viewing my page](/L05-E01-P02.PNG)
 
 # Experiment 4 
 * Now we will remove the container and see if the volume still persist
@@ -58,7 +58,7 @@ docker volume inspect mysql-db
 ```
 
 * The output will be as shown below in the picture.
-![viewing my page](/L05-E01-P04.png)
+![viewing my page](/L05-E01-P04.PNG)
 
 # Experiment 7
 * Now if we delete this container and run another container and attach this volume
@@ -75,7 +75,7 @@ docker  run -d --name mysql3 -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var
 docker  inspect mysql3
 ```
 * The output will be as shown below in the picture.
-![viewing my page](/L05-E01-P05.png)
+![viewing my page](/L05-E01-P05.PNG)
 
 # Summary
  * Need to check the docker file of a container if you need to worry about volumes
