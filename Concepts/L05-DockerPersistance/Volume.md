@@ -24,7 +24,7 @@ docker  inspect mysql
 ```
 * The output will be as shown below in the picture.
 ![viewing my page](/L05-E01-P01.png)
-#Experiment 3
+# Experiment 3
 * Now we check if the volume which we created is existing or not
 ```bash
 docker volume ls
@@ -32,8 +32,8 @@ docker volume ls
 * The output will be as shown below in the picture.
 ![viewing my page](/L05-E01-P02.png)
 
-#Experiment 4 
-*
+# Experiment 4 
+* Now we will run another mysql container and chek 
 
 # Summary
  * Need to check the docker file of a container if you need to worry about volumes
