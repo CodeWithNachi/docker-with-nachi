@@ -47,7 +47,7 @@ docker volume ls
 * To make Volume user friendly, we can create Named Volumes
 * -v : allows us to specify either a new volume that we want to create for this container
 ```bash
-docker  run -d --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:var/lib/mysql mysql
+docker  run -d --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
 ```
 
 # Experiment 6
@@ -63,11 +63,11 @@ docker volume inspect mysql-db
 # Experiment 7
 * Now if we delete this container and run another container and attach this volume
 ```bash
-docker container rm -f mysql2
+docker rm -f mysql2
 ```
 * run a new container named as mysql3
 ```bash
-docker  run -d --name mysql3 -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:var/lib/mysql mysql
+docker  run -d --name mysql3 -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
 ```
 # Experiment 8
 * Now if we check which if its using the same volume or not
