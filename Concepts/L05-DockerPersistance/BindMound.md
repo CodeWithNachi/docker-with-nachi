@@ -40,12 +40,6 @@ ls
  * Mounting a file/dir in the container( Deleting them in the container would delete them on the host machine)
  * Mount is ideal for developers, since they dont have to dockerize anything while they are still developing & can see the changes quickly.
  
-# Test youself
- * Database upgrade with containers
- * Create a mysql container with named volume *mysql-db* using version 5.7
- * Use Docker hub to learn Volume path and versions needed to run it
- * Check logs, stop container
- * Create a new mysql container with the same named volume using version 8.0
- * Check logs to validate
+
 
  
