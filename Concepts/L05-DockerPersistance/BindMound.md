@@ -33,7 +33,6 @@ cd /usr/share/nginx/html
 ls
 ```
  * The output shown as below( depending on what you have in the current folder)
- 
  ![viewing my page](/L06-E01-P02.PNG)
  
  # Summary
