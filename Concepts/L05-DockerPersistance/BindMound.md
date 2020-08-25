@@ -16,3 +16,36 @@ docker run -d --name mynginx -p 8090:80 -v ${PWD}:/usr/share/nginx/html nginx
 ```
  * The output will be as shown below in the picture.
  ![viewing my page](/L06-E01-P01.PNG)
+
+
+# Experiment 2
+ * Now we will check if Nginx is picking file from the host machine
+ * In order to do so, let get inside the container
+ ```bash
+docker exec -it mynginx bash
+```
+* Now we will go to the location which we mounted using the below command inside the bash
+ ```bash
+cd /usr/share/nginx/html
+```
+* if we do an ls ( List all the files), it will show the content of our local directory
+ ```bash
+ls
+```
+ * The output shown as below( depending on what you have in the current folder)
+ 
+ ![viewing my page](/L06-E01-P02.PNG)
+ 
+ # Summary
+ * Mounting a file/dir in the container( Deleting them in the container would delete them on the host machine)
+ * Mount is ideal for developers, since they dont have to dockerize anything while they are still developing & can see the changes quickly.
+ 
+# Test youself
+ * Database upgrade with containers
+ * Create a mysql container with named volume *mysql-db* using version 5.7
+ * Use Docker hub to learn Volume path and versions needed to run it
+ * Check logs, stop container
+ * Create a new mysql container with the same named volume using version 8.0
+ * Check logs to validate
+
+ 
