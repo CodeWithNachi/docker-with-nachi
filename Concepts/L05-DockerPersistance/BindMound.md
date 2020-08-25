@@ -10,7 +10,7 @@ sort: 2
 # Experiment 1
  * Lets start a nginx container mapping a new html file.
  * Lets create a index.html file with text "Nginx: Showing result from Host Machine and not from the Container"Nginx: Showing result from Host Machine and not from the Container
- * Since I have created the file from the default location my powershell is running, I will use the $(pwd) command to get the path
+ * Since I have created the file from the default location my powershell is running, I will use the ${PWD} command to get the path in windows ( for Linux the command would be $(pwd))
 ```bash
 docker run -d --name mynginx -p 8090:80 -v ${PWD}:/usr/share/nginx/html nginx
 ```
