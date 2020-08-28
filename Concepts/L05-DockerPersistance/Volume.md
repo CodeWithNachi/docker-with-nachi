@@ -64,9 +64,13 @@ docker rm -f mynginx2
 docker volume rm nginx-vol
 ```
 # Experiment 8
-* Now we would see that the volume can actually contain data inside it, let create 
+ * Now we would see that the volume can actually contain data inside it, let create one 
 ```bash
 docker  run -d --name mynginx -p 8090:80 -v nginx-vol:/usr/share/nginx/html/data nginx
+```
+ * Now lets try to copy the index file to a different folder in the Volume
+```bash
+docker exec -w /usr/share/nginx/html mynginx cp ./index.html ./data/index.html
 ```
 # Summary
  * Names volumes are user friendly and let the user know for what that volume was created
