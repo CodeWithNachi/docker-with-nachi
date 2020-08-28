@@ -72,6 +72,10 @@ docker  run -d --name mynginx -p 8090:80 -v nginx-vol:/usr/share/nginx/html/data
 ```bash
 docker exec -w /usr/share/nginx/html mynginx cp ./index.html ./data/index.html
 ```
+ * Lets try to access the index.html file from the new location, which is from the data folder
+ * The output will be as shown below in the picture.
+ ![viewing my page](/L05-E01-P04.PNG)
+ 
 # Summary
  * Names volumes are user friendly and let the user know for what that volume was created
  * Volume has to be deleted manually( Database will outlived the executable)
