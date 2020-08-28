@@ -76,6 +76,23 @@ docker exec -w /usr/share/nginx/html mynginx cp ./index.html ./data/index.html
  * The output will be as shown below in the picture.
  ![viewing my page](/L05-E01-P04.PNG)
  
+ # Experiment 9
+  * Now lets see if we can share the same file with another container. But before doing lets do one change in the file, so that we are share that we are using the same file. 
+  * Lets use the [sed command](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)  to replace the string nginx with vol-share-example
+ ```bash
+docker  run -d --name mynginx -p 8090:80 -v nginx-vol:/usr/share/nginx/html/data nginx
+```
+  * Now lets kill the previous container and create a new one
+```bash
+docker rm -f mynginx
+```
+```bash
+docker  run -d --name mynginx1 -p 8091:80 -v nginx-vol:/usr/share/nginx/html/data nginx
+```
+  * Lets try to access the index.html file for this new container, which is from the data folder
+  * The output will be as shown below in the picture.
+ ![viewing my page](/L05-E01-P05.PNG)
+ 
 # Summary
  * Names volumes are user friendly and let the user know for what that volume was created
  * Volume has to be deleted manually( Database will outlived the executable)
