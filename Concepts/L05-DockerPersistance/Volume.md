@@ -63,13 +63,20 @@ docker rm -f mynginx2
 ```bash
 docker volume rm nginx-vol
 ```
+# Experiment 8
+* Now we would see that the volume can actually contain data inside it, let create 
+```bash
+docker  run -d --name mynginx -p 8090:80 -v nginx-vol:/usr/share/nginx/html/data nginx
+```
 # Summary
  * Names volumes are user friendly and let the user know for what that volume was created
- * Volume has to be deleted manually( Database will outlived the executable) 
+ * Volume has to be deleted manually( Database will outlived the executable)
+ * Volume can contains data
+ * Volume can be used to share data across containers
  
 # Test youself
  * Database upgrade with containers
- * Create a mysql container with named volume *mysql-db* using version 5.7
+ * Create a mysql container with named volume **mysql-db** using version 5.7
  * Use Docker hub to learn Volume path and versions needed to run it
  * Check logs, stop container
  * Create a new mysql container with the same named volume using version 8.0
