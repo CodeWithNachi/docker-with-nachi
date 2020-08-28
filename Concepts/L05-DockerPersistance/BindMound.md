@@ -9,6 +9,8 @@ sort: 2
 
 # Experiment 1
  * Lets start a nginx container mapping a new html file.
+ * In order to map a local folder from your host machine, you can either map the folder from the setting menu manually or you will get a pop-up to while trying to access any directory from the local machine. Below is the screenshot which will show the folder's mapped for file sharing 
+  ![viewing my page](/L06-E01-P03.PNG)
  * Lets create a index.html file with text "Nginx: Showing result from Host Machine and not from the Container"Nginx: Showing result from Host Machine and not from the Container
  * Since I have created the file from the default location my powershell is running, I will use the ${PWD} command to get the path in windows ( for Linux the command would be $(pwd))
 ```bash
