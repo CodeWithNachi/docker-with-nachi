@@ -80,7 +80,7 @@ docker exec -w /usr/share/nginx/html mynginx cp ./index.html ./data/index.html
   * Now lets see if we can share the same file with another container. But before doing lets do one change in the file, so that we are share that we are using the same file. 
   * Lets use the [sed command](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)  to replace the string nginx with vol-share-example
  ```bash
-docker  run -d --name mynginx -p 8090:80 -v nginx-vol:/usr/share/nginx/html/data nginx
+docker exec -w /usr/share/nginx/html/data mynginx sed -i s/nginx/vol-share-example/g index.html
 ```
   * Now lets kill the previous container and create a new one
 ```bash
